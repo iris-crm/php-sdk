@@ -37,31 +37,11 @@ PHP 5.5 and later
 ## Installation & Usage
 ### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
+To install the bindings via [Composer](http://getcomposer.org/), please run:
 
 ```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/iris-crm/php-sdk.git"
-    }
-  ],
-  "require": {
-    "iris-crm/php-sdk": "*@dev"
-  }
-}
-```
-
-Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
-```
+composer require iris-crm/php-sdk
+``` 
 
 ## Tests
 
