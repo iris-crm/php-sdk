@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **set_by** | **string** | Task set by user (User Id) | 
 **set_for** | **string** | Task set for user (User Id) | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

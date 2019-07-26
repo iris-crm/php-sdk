@@ -11,5 +11,5 @@ Name | Type | Description | Notes
 **to** | **int** | The last position in a data set | [optional] 
 **total** | **int** | Total number of records in a data set | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

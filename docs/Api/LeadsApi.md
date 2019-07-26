@@ -4,61 +4,61 @@ All URIs are relative to *https://iriscrm.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**leadsApplicationsAppIdMappingsGet**](LeadsApi.md#leadsApplicationsAppIdMappingsGet) | **GET** /leads/applications/{appId}/mappings | Get a list of available application field mappings
-[**leadsApplicationsAppIdMappingsMapIdDelete**](LeadsApi.md#leadsApplicationsAppIdMappingsMapIdDelete) | **DELETE** /leads/applications/{appId}/mappings/{mapId} | Delete an application field mapping
-[**leadsApplicationsAppIdMappingsMapIdGet**](LeadsApi.md#leadsApplicationsAppIdMappingsMapIdGet) | **GET** /leads/applications/{appId}/mappings/{mapId} | Get a application field mapping
-[**leadsApplicationsAppIdMappingsMapIdPatch**](LeadsApi.md#leadsApplicationsAppIdMappingsMapIdPatch) | **PATCH** /leads/applications/{appId}/mappings/{mapId} | Update an application field mapping
-[**leadsApplicationsAppIdMappingsPost**](LeadsApi.md#leadsApplicationsAppIdMappingsPost) | **POST** /leads/applications/{appId}/mappings | Create a new application field mapping
-[**leadsApplicationsGet**](LeadsApi.md#leadsApplicationsGet) | **GET** /leads/applications | Get a list of available applications
-[**leadsCampaignsGet**](LeadsApi.md#leadsCampaignsGet) | **GET** /leads/campaigns | Get a list of available campaigns
-[**leadsDynamicFieldsSchemaGet**](LeadsApi.md#leadsDynamicFieldsSchemaGet) | **GET** /leads/dynamic-fields-schema | Get a schema of lead fields
-[**leadsEmailsTemplatesGet**](LeadsApi.md#leadsEmailsTemplatesGet) | **GET** /leads/emails/templates | Get list of email templates
-[**leadsFieldsFieldIdGet**](LeadsApi.md#leadsFieldsFieldIdGet) | **GET** /leads/fields/{fieldId} | Get a lead field
-[**leadsFieldsFieldIdOrderPatch**](LeadsApi.md#leadsFieldsFieldIdOrderPatch) | **PATCH** /leads/fields/{fieldId}/order | Update a lead field order position
-[**leadsFieldsFieldIdPatch**](LeadsApi.md#leadsFieldsFieldIdPatch) | **PATCH** /leads/fields/{fieldId} | Update a lead field
-[**leadsFieldsGet**](LeadsApi.md#leadsFieldsGet) | **GET** /leads/fields | Get a list of available lead fields
-[**leadsFieldsPost**](LeadsApi.md#leadsFieldsPost) | **POST** /leads/fields | Create a new lead field
-[**leadsFieldsTabsGet**](LeadsApi.md#leadsFieldsTabsGet) | **GET** /leads/fields/tabs | Get a list of all lead field tabs
-[**leadsFieldsTabsPost**](LeadsApi.md#leadsFieldsTabsPost) | **POST** /leads/fields/tabs | Create a lead field tab
-[**leadsFieldsTabsTabIdGet**](LeadsApi.md#leadsFieldsTabsTabIdGet) | **GET** /leads/fields/tabs/{tabId} | Get a lead field tab
-[**leadsFieldsTabsTabIdPatch**](LeadsApi.md#leadsFieldsTabsTabIdPatch) | **PATCH** /leads/fields/tabs/{tabId} | Update a lead field tab
-[**leadsGet**](LeadsApi.md#leadsGet) | **GET** /leads | Get a list of leads
-[**leadsGroupsGet**](LeadsApi.md#leadsGroupsGet) | **GET** /leads/groups | Get a list of available groups
-[**leadsLeadIdActivityCampaignGet**](LeadsApi.md#leadsLeadIdActivityCampaignGet) | **GET** /leads/{leadId}/activity/campaign | Get a list of all lead campaign activity
-[**leadsLeadIdActivityDeletionGet**](LeadsApi.md#leadsLeadIdActivityDeletionGet) | **GET** /leads/{leadId}/activity/deletion | Get a list of all lead deletion activity
-[**leadsLeadIdActivityDuplicatesGet**](LeadsApi.md#leadsLeadIdActivityDuplicatesGet) | **GET** /leads/{leadId}/activity/duplicates | Get a list of all lead duplicate activity
-[**leadsLeadIdActivityLinksGet**](LeadsApi.md#leadsLeadIdActivityLinksGet) | **GET** /leads/{leadId}/activity/links | Get a list of all lead links activity
-[**leadsLeadIdActivitySourceGet**](LeadsApi.md#leadsLeadIdActivitySourceGet) | **GET** /leads/{leadId}/activity/source | Get a list of all lead source activity
-[**leadsLeadIdActivityStatusGet**](LeadsApi.md#leadsLeadIdActivityStatusGet) | **GET** /leads/{leadId}/activity/status | Get a list of all lead status activity
-[**leadsLeadIdApplicationsApplicationIdPopulatePost**](LeadsApi.md#leadsLeadIdApplicationsApplicationIdPopulatePost) | **POST** /leads/{leadId}/applications/{applicationId}/populate | Populate PDF Document
-[**leadsLeadIdAppointmentsGet**](LeadsApi.md#leadsLeadIdAppointmentsGet) | **GET** /leads/{leadId}/appointments | Get lead appointments
-[**leadsLeadIdAppointmentsPost**](LeadsApi.md#leadsLeadIdAppointmentsPost) | **POST** /leads/{leadId}/appointments | Create a lead appointment
-[**leadsLeadIdDocumentsDocumentIdGet**](LeadsApi.md#leadsLeadIdDocumentsDocumentIdGet) | **GET** /leads/{leadId}/documents/{documentId} | Download a document
-[**leadsLeadIdDocumentsGet**](LeadsApi.md#leadsLeadIdDocumentsGet) | **GET** /leads/{leadId}/documents | Get a list of available documents
-[**leadsLeadIdDocumentsPost**](LeadsApi.md#leadsLeadIdDocumentsPost) | **POST** /leads/{leadId}/documents | Upload a document
-[**leadsLeadIdEmailsTemplateIdPost**](LeadsApi.md#leadsLeadIdEmailsTemplateIdPost) | **POST** /leads/{leadId}/emails/{templateId} | Send an email to lead with template
-[**leadsLeadIdGet**](LeadsApi.md#leadsLeadIdGet) | **GET** /leads/{leadId} | Get detailed lead information
-[**leadsLeadIdMailboxEmailIdAttachmentAttachmentIdGet**](LeadsApi.md#leadsLeadIdMailboxEmailIdAttachmentAttachmentIdGet) | **GET** /leads/{leadId}/mailbox/{emailId}/attachment/{attachmentId} | Download a mailbox email attachment
-[**leadsLeadIdNotesGet**](LeadsApi.md#leadsLeadIdNotesGet) | **GET** /leads/{leadId}/notes | Get lead notes
-[**leadsLeadIdNotesPost**](LeadsApi.md#leadsLeadIdNotesPost) | **POST** /leads/{leadId}/notes | Create a lead note
-[**leadsLeadIdPatch**](LeadsApi.md#leadsLeadIdPatch) | **PATCH** /leads/{leadId} | Update a lead
-[**leadsLeadIdSignaturesApplicationIdGeneratePost**](LeadsApi.md#leadsLeadIdSignaturesApplicationIdGeneratePost) | **POST** /leads/{leadId}/signatures/{applicationId}/generate | Generate an e-signature document
-[**leadsLeadIdSignaturesApplicationIdSendPost**](LeadsApi.md#leadsLeadIdSignaturesApplicationIdSendPost) | **POST** /leads/{leadId}/signatures/{applicationId}/send | Send an e-signature document
-[**leadsLeadIdSignaturesGet**](LeadsApi.md#leadsLeadIdSignaturesGet) | **GET** /leads/{leadId}/signatures | Get a list of all lead e-signatures documents
-[**leadsLeadIdSmsTemplateIdPost**](LeadsApi.md#leadsLeadIdSmsTemplateIdPost) | **POST** /leads/{leadId}/sms/{templateId} | Send an sms to lead with selected sms template
-[**leadsLeadIdTasksGet**](LeadsApi.md#leadsLeadIdTasksGet) | **GET** /leads/{leadId}/tasks | Get lead tasks
-[**leadsLeadIdTasksPost**](LeadsApi.md#leadsLeadIdTasksPost) | **POST** /leads/{leadId}/tasks | Create a lead task
-[**leadsLeadIdUsersGet**](LeadsApi.md#leadsLeadIdUsersGet) | **GET** /leads/{leadId}/users | Get a list of assigned users
-[**leadsLeadIdUsersPost**](LeadsApi.md#leadsLeadIdUsersPost) | **POST** /leads/{leadId}/users | Assign a user
-[**leadsLeadIdUsersUserIdDelete**](LeadsApi.md#leadsLeadIdUsersUserIdDelete) | **DELETE** /leads/{leadId}/users/{userId} | Unassign a user from a lead
-[**leadsPost**](LeadsApi.md#leadsPost) | **POST** /leads | Create a lead
-[**leadsSignaturesApplicationIdDownloadGet**](LeadsApi.md#leadsSignaturesApplicationIdDownloadGet) | **GET** /leads/signatures/{applicationId}/download | Download an e-signature document
-[**leadsSourcesGet**](LeadsApi.md#leadsSourcesGet) | **GET** /leads/sources | Get a list of available sources
-[**leadsStatusesGet**](LeadsApi.md#leadsStatusesGet) | **GET** /leads/statuses | Get a list of available statuses
-[**leadsUsersGet**](LeadsApi.md#leadsUsersGet) | **GET** /leads/users | Get a list of available users
+[**leadsApplicationsAppIdMappingsGet**](LeadsApi.md#leadsapplicationsappidmappingsget) | **GET** /leads/applications/{appId}/mappings | Get a list of available application field mappings
+[**leadsApplicationsAppIdMappingsMapIdDelete**](LeadsApi.md#leadsapplicationsappidmappingsmapiddelete) | **DELETE** /leads/applications/{appId}/mappings/{mapId} | Delete an application field mapping
+[**leadsApplicationsAppIdMappingsMapIdGet**](LeadsApi.md#leadsapplicationsappidmappingsmapidget) | **GET** /leads/applications/{appId}/mappings/{mapId} | Get a application field mapping
+[**leadsApplicationsAppIdMappingsMapIdPatch**](LeadsApi.md#leadsapplicationsappidmappingsmapidpatch) | **PATCH** /leads/applications/{appId}/mappings/{mapId} | Update an application field mapping
+[**leadsApplicationsAppIdMappingsPost**](LeadsApi.md#leadsapplicationsappidmappingspost) | **POST** /leads/applications/{appId}/mappings | Create a new application field mapping
+[**leadsApplicationsGet**](LeadsApi.md#leadsapplicationsget) | **GET** /leads/applications | Get a list of available applications
+[**leadsCampaignsGet**](LeadsApi.md#leadscampaignsget) | **GET** /leads/campaigns | Get a list of available campaigns
+[**leadsEmailsTemplatesGet**](LeadsApi.md#leadsemailstemplatesget) | **GET** /leads/emails/templates | Get list of email templates
+[**leadsFieldsFieldIdGet**](LeadsApi.md#leadsfieldsfieldidget) | **GET** /leads/fields/{fieldId} | Get a lead field
+[**leadsFieldsFieldIdOrderPatch**](LeadsApi.md#leadsfieldsfieldidorderpatch) | **PATCH** /leads/fields/{fieldId}/order | Update a lead field order position
+[**leadsFieldsFieldIdPatch**](LeadsApi.md#leadsfieldsfieldidpatch) | **PATCH** /leads/fields/{fieldId} | Update a lead field
+[**leadsFieldsGet**](LeadsApi.md#leadsfieldsget) | **GET** /leads/fields | Get a list of available lead fields
+[**leadsFieldsPost**](LeadsApi.md#leadsfieldspost) | **POST** /leads/fields | Create a new lead field
+[**leadsFieldsTabsGet**](LeadsApi.md#leadsfieldstabsget) | **GET** /leads/fields/tabs | Get a list of all lead field tabs
+[**leadsFieldsTabsPost**](LeadsApi.md#leadsfieldstabspost) | **POST** /leads/fields/tabs | Create a lead field tab
+[**leadsFieldsTabsTabIdGet**](LeadsApi.md#leadsfieldstabstabidget) | **GET** /leads/fields/tabs/{tabId} | Get a lead field tab
+[**leadsFieldsTabsTabIdPatch**](LeadsApi.md#leadsfieldstabstabidpatch) | **PATCH** /leads/fields/tabs/{tabId} | Update a lead field tab
+[**leadsGet**](LeadsApi.md#leadsget) | **GET** /leads | Get a list of leads
+[**leadsGroupsGet**](LeadsApi.md#leadsgroupsget) | **GET** /leads/groups | Get a list of available groups
+[**leadsLeadIdActivityCampaignGet**](LeadsApi.md#leadsleadidactivitycampaignget) | **GET** /leads/{leadId}/activity/campaign | Get a list of all lead campaign activity
+[**leadsLeadIdActivityDeletionGet**](LeadsApi.md#leadsleadidactivitydeletionget) | **GET** /leads/{leadId}/activity/deletion | Get a list of all lead deletion activity
+[**leadsLeadIdActivityDuplicatesGet**](LeadsApi.md#leadsleadidactivityduplicatesget) | **GET** /leads/{leadId}/activity/duplicates | Get a list of all lead duplicate activity
+[**leadsLeadIdActivityLinksGet**](LeadsApi.md#leadsleadidactivitylinksget) | **GET** /leads/{leadId}/activity/links | Get a list of all lead links activity
+[**leadsLeadIdActivitySourceGet**](LeadsApi.md#leadsleadidactivitysourceget) | **GET** /leads/{leadId}/activity/source | Get a list of all lead source activity
+[**leadsLeadIdActivityStatusGet**](LeadsApi.md#leadsleadidactivitystatusget) | **GET** /leads/{leadId}/activity/status | Get a list of all lead status activity
+[**leadsLeadIdApplicationsApplicationIdPopulatePost**](LeadsApi.md#leadsleadidapplicationsapplicationidpopulatepost) | **POST** /leads/{leadId}/applications/{applicationId}/populate | Populate PDF Document
+[**leadsLeadIdAppointmentsGet**](LeadsApi.md#leadsleadidappointmentsget) | **GET** /leads/{leadId}/appointments | Get lead appointments
+[**leadsLeadIdAppointmentsPost**](LeadsApi.md#leadsleadidappointmentspost) | **POST** /leads/{leadId}/appointments | Create a lead appointment
+[**leadsLeadIdDocumentsDocumentIdGet**](LeadsApi.md#leadsleadiddocumentsdocumentidget) | **GET** /leads/{leadId}/documents/{documentId} | Download a document
+[**leadsLeadIdDocumentsGet**](LeadsApi.md#leadsleadiddocumentsget) | **GET** /leads/{leadId}/documents | Get a list of available documents
+[**leadsLeadIdDocumentsPost**](LeadsApi.md#leadsleadiddocumentspost) | **POST** /leads/{leadId}/documents | Upload a document
+[**leadsLeadIdEmailsTemplateIdPost**](LeadsApi.md#leadsleadidemailstemplateidpost) | **POST** /leads/{leadId}/emails/{templateId} | Send an email to lead with template
+[**leadsLeadIdGet**](LeadsApi.md#leadsleadidget) | **GET** /leads/{leadId} | Get detailed lead information
+[**leadsLeadIdMailboxEmailIdAttachmentAttachmentIdGet**](LeadsApi.md#leadsleadidmailboxemailidattachmentattachmentidget) | **GET** /leads/{leadId}/mailbox/{emailId}/attachment/{attachmentId} | Download a mailbox email attachment
+[**leadsLeadIdNotesGet**](LeadsApi.md#leadsleadidnotesget) | **GET** /leads/{leadId}/notes | Get lead notes
+[**leadsLeadIdNotesPost**](LeadsApi.md#leadsleadidnotespost) | **POST** /leads/{leadId}/notes | Create a lead note
+[**leadsLeadIdPatch**](LeadsApi.md#leadsleadidpatch) | **PATCH** /leads/{leadId} | Update a lead
+[**leadsLeadIdSignaturesApplicationIdGeneratePost**](LeadsApi.md#leadsleadidsignaturesapplicationidgeneratepost) | **POST** /leads/{leadId}/signatures/{applicationId}/generate | Generate an e-signature document
+[**leadsLeadIdSignaturesApplicationIdSendPost**](LeadsApi.md#leadsleadidsignaturesapplicationidsendpost) | **POST** /leads/{leadId}/signatures/{applicationId}/send | Send an e-signature document
+[**leadsLeadIdSignaturesGet**](LeadsApi.md#leadsleadidsignaturesget) | **GET** /leads/{leadId}/signatures | Get a list of all lead e-signatures documents
+[**leadsLeadIdSmsTemplateIdPost**](LeadsApi.md#leadsleadidsmstemplateidpost) | **POST** /leads/{leadId}/sms/{templateId} | Send an sms to lead with selected sms template
+[**leadsLeadIdTasksGet**](LeadsApi.md#leadsleadidtasksget) | **GET** /leads/{leadId}/tasks | Get lead tasks
+[**leadsLeadIdTasksPost**](LeadsApi.md#leadsleadidtaskspost) | **POST** /leads/{leadId}/tasks | Create a lead task
+[**leadsLeadIdUsersGet**](LeadsApi.md#leadsleadidusersget) | **GET** /leads/{leadId}/users | Get a list of assigned users
+[**leadsLeadIdUsersPost**](LeadsApi.md#leadsleadiduserspost) | **POST** /leads/{leadId}/users | Assign a user
+[**leadsLeadIdUsersUserIdDelete**](LeadsApi.md#leadsleadidusersuseriddelete) | **DELETE** /leads/{leadId}/users/{userId} | Unassign a user from a lead
+[**leadsPost**](LeadsApi.md#leadspost) | **POST** /leads | Create a lead
+[**leadsSignaturesApplicationIdDownloadGet**](LeadsApi.md#leadssignaturesapplicationiddownloadget) | **GET** /leads/signatures/{applicationId}/download | Download an e-signature document
+[**leadsSmsTemplatesGet**](LeadsApi.md#leadssmstemplatesget) | **GET** /leads/sms/templates | Get list of sms templates
+[**leadsSourcesGet**](LeadsApi.md#leadssourcesget) | **GET** /leads/sources | Get a list of available sources
+[**leadsStatusesGet**](LeadsApi.md#leadsstatusesget) | **GET** /leads/statuses | Get a list of available statuses
+[**leadsUsersGet**](LeadsApi.md#leadsusersget) | **GET** /leads/users | Get a list of available users
 
 # **leadsApplicationsAppIdMappingsGet**
-> \Swagger\Client\Model\InlineResponse20037 leadsApplicationsAppIdMappingsGet($app_id)
+> \Swagger\Client\Model\InlineResponse20038 leadsApplicationsAppIdMappingsGet($app_id)
 
 Get a list of available application field mappings
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
+[**\Swagger\Client\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsApplicationsAppIdMappingsMapIdDelete**
-> \Swagger\Client\Model\InlineResponse20038 leadsApplicationsAppIdMappingsMapIdDelete($app_id, $map_id)
+> \Swagger\Client\Model\InlineResponse20039 leadsApplicationsAppIdMappingsMapIdDelete($app_id, $map_id)
 
 Delete an application field mapping
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
+[**\Swagger\Client\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
 
 ### Authorization
 
@@ -388,7 +388,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsCampaignsGet**
-> \Swagger\Client\Model\InlineResponse20039 leadsCampaignsGet()
+> \Swagger\Client\Model\InlineResponse20040 leadsCampaignsGet()
 
 Get a list of available campaigns
 
@@ -424,57 +424,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsDynamicFieldsSchemaGet**
-> \Swagger\Client\Model\DynamicFieldsSchema leadsDynamicFieldsSchemaGet()
-
-Get a schema of lead fields
-
-Get a schema that describes lead fields and tabs they belong to
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->leadsDynamicFieldsSchemaGet();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsDynamicFieldsSchemaGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Swagger\Client\Model\DynamicFieldsSchema**](../Model/DynamicFieldsSchema.md)
+[**\Swagger\Client\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
 
 ### Authorization
 
@@ -488,7 +438,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsEmailsTemplatesGet**
-> \Swagger\Client\Model\InlineResponse20026 leadsEmailsTemplatesGet()
+> \Swagger\Client\Model\InlineResponse20029 leadsEmailsTemplatesGet()
 
 Get list of email templates
 
@@ -524,7 +474,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
 
 ### Authorization
 
@@ -592,7 +542,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsFieldIdOrderPatch**
-> \Swagger\Client\Model\InlineResponse20035 leadsFieldsFieldIdOrderPatch($field_id, $body)
+> \Swagger\Client\Model\InlineResponse20012 leadsFieldsFieldIdOrderPatch($field_id, $body)
 
 Update a lead field order position
 
@@ -634,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\Swagger\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 
@@ -704,7 +654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsGet**
-> \Swagger\Client\Model\InlineResponse20034 leadsFieldsGet()
+> \Swagger\Client\Model\InlineResponse20011 leadsFieldsGet()
 
 Get a list of available lead fields
 
@@ -740,7 +690,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\Swagger\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 
@@ -808,7 +758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsTabsGet**
-> \Swagger\Client\Model\InlineResponse20036 leadsFieldsTabsGet()
+> \Swagger\Client\Model\InlineResponse20013 leadsFieldsTabsGet()
 
 Get a list of all lead field tabs
 
@@ -844,7 +794,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
 
 ### Authorization
 
@@ -1102,7 +1052,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsGroupsGet**
-> \Swagger\Client\Model\InlineResponse20040 leadsGroupsGet()
+> \Swagger\Client\Model\InlineResponse20041 leadsGroupsGet()
 
 Get a list of available groups
 
@@ -1138,7 +1088,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
+[**\Swagger\Client\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
 
 ### Authorization
 
@@ -1152,7 +1102,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityCampaignGet**
-> \Swagger\Client\Model\InlineResponse20028 leadsLeadIdActivityCampaignGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdActivityCampaignGet($lead_id)
 
 Get a list of all lead campaign activity
 
@@ -1192,7 +1142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -1206,7 +1156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDeletionGet**
-> \Swagger\Client\Model\InlineResponse20029 leadsLeadIdActivityDeletionGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20033 leadsLeadIdActivityDeletionGet($lead_id)
 
 Get a list of all lead deletion activity
 
@@ -1246,7 +1196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
 
 ### Authorization
 
@@ -1260,7 +1210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDuplicatesGet**
-> \Swagger\Client\Model\InlineResponse20030 leadsLeadIdActivityDuplicatesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20034 leadsLeadIdActivityDuplicatesGet($lead_id)
 
 Get a list of all lead duplicate activity
 
@@ -1300,7 +1250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
 
 ### Authorization
 
@@ -1314,7 +1264,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityLinksGet**
-> \Swagger\Client\Model\InlineResponse20031 leadsLeadIdActivityLinksGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20035 leadsLeadIdActivityLinksGet($lead_id)
 
 Get a list of all lead links activity
 
@@ -1354,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
 
 ### Authorization
 
@@ -1368,7 +1318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivitySourceGet**
-> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdActivitySourceGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20036 leadsLeadIdActivitySourceGet($lead_id)
 
 Get a list of all lead source activity
 
@@ -1408,7 +1358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
 
 ### Authorization
 
@@ -1422,7 +1372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityStatusGet**
-> \Swagger\Client\Model\InlineResponse20033 leadsLeadIdActivityStatusGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20037 leadsLeadIdActivityStatusGet($lead_id)
 
 Get a list of all lead status activity
 
@@ -1462,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
+[**\Swagger\Client\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
 
 ### Authorization
 
@@ -1476,7 +1426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdApplicationsApplicationIdPopulatePost**
-> \Swagger\Client\Model\InlineResponse20015 leadsLeadIdApplicationsApplicationIdPopulatePost($lead_id, $application_id)
+> \Swagger\Client\Model\InlineResponse20018 leadsLeadIdApplicationsApplicationIdPopulatePost($lead_id, $application_id)
 
 Populate PDF Document
 
@@ -1518,7 +1468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
 
 ### Authorization
 
@@ -1532,7 +1482,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdAppointmentsGet**
-> \Swagger\Client\Model\InlineResponse20013 leadsLeadIdAppointmentsGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdAppointmentsGet($lead_id)
 
 Get lead appointments
 
@@ -1572,7 +1522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -1586,7 +1536,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdAppointmentsPost**
-> \Swagger\Client\Model\InlineResponse20014 leadsLeadIdAppointmentsPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20017 leadsLeadIdAppointmentsPost($body, $lead_id)
 
 Create a lead appointment
 
@@ -1628,7 +1578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
 
 ### Authorization
 
@@ -1698,7 +1648,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdDocumentsGet**
-> \Swagger\Client\Model\InlineResponse20021 leadsLeadIdDocumentsGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdDocumentsGet($lead_id)
 
 Get a list of available documents
 
@@ -1738,7 +1688,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -1814,7 +1764,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdEmailsTemplateIdPost**
-> \Swagger\Client\Model\InlineResponse20025 leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body)
+> \Swagger\Client\Model\InlineResponse20028 leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body)
 
 Send an email to lead with template
 
@@ -1837,7 +1787,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 );
 $lead_id = 56; // int | Lead Id
 $template_id = 56; // int | Template Id
-$body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | 
+$body = new \Swagger\Client\Model\null(); //  | 
 
 try {
     $result = $apiInstance->leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body);
@@ -1854,11 +1804,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
  **template_id** | **int**| Template Id |
- **body** | [**\Swagger\Client\Model\Body7**](../Model/Body7.md)|  | [optional]
+ **body** | [****](../Model/.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
 
 ### Authorization
 
@@ -1984,7 +1934,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdNotesGet**
-> \Swagger\Client\Model\InlineResponse20011 leadsLeadIdNotesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20014 leadsLeadIdNotesGet($lead_id)
 
 Get lead notes
 
@@ -2024,7 +1974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
@@ -2038,7 +1988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdNotesPost**
-> \Swagger\Client\Model\InlineResponse20012 leadsLeadIdNotesPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20015 leadsLeadIdNotesPost($body, $lead_id)
 
 Create a lead note
 
@@ -2080,7 +2030,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -2150,7 +2100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSignaturesApplicationIdGeneratePost**
-> \Swagger\Client\Model\InlineResponse20022 leadsLeadIdSignaturesApplicationIdGeneratePost($lead_id, $application_id)
+> \Swagger\Client\Model\InlineResponse20025 leadsLeadIdSignaturesApplicationIdGeneratePost($lead_id, $application_id)
 
 Generate an e-signature document
 
@@ -2192,7 +2142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
 
 ### Authorization
 
@@ -2206,7 +2156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSignaturesApplicationIdSendPost**
-> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdSignaturesApplicationIdSendPost($lead_id, $application_id, $body)
+> \Swagger\Client\Model\InlineResponse20027 leadsLeadIdSignaturesApplicationIdSendPost($lead_id, $application_id, $body)
 
 Send an e-signature document
 
@@ -2250,7 +2200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
+[**\Swagger\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
 
 ### Authorization
 
@@ -2264,7 +2214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSignaturesGet**
-> \Swagger\Client\Model\InlineResponse20023 leadsLeadIdSignaturesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20026 leadsLeadIdSignaturesGet($lead_id)
 
 Get a list of all lead e-signatures documents
 
@@ -2304,7 +2254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\Swagger\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
 
 ### Authorization
 
@@ -2318,7 +2268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSmsTemplateIdPost**
-> \Swagger\Client\Model\InlineResponse20027 leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body)
+> \Swagger\Client\Model\InlineResponse20030 leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body)
 
 Send an sms to lead with selected sms template
 
@@ -2341,7 +2291,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 );
 $lead_id = 56; // int | Lead Id
 $template_id = 56; // int | Template Id
-$body = new \Swagger\Client\Model\Body8(); // \Swagger\Client\Model\Body8 | 
+$body = new \Swagger\Client\Model\null(); //  | 
 
 try {
     $result = $apiInstance->leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body);
@@ -2358,11 +2308,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
  **template_id** | **int**| Template Id |
- **body** | [**\Swagger\Client\Model\Body8**](../Model/Body8.md)|  | [optional]
+ **body** | [****](../Model/.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
+[**\Swagger\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
 
 ### Authorization
 
@@ -2376,7 +2326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdTasksGet**
-> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdTasksGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20019 leadsLeadIdTasksGet($lead_id)
 
 Get lead tasks
 
@@ -2416,7 +2366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
 
 ### Authorization
 
@@ -2430,7 +2380,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdTasksPost**
-> \Swagger\Client\Model\InlineResponse20017 leadsLeadIdTasksPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20020 leadsLeadIdTasksPost($body, $lead_id)
 
 Create a lead task
 
@@ -2472,7 +2422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
 
 ### Authorization
 
@@ -2486,7 +2436,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersGet**
-> \Swagger\Client\Model\InlineResponse20018 leadsLeadIdUsersGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20021 leadsLeadIdUsersGet($lead_id)
 
 Get a list of assigned users
 
@@ -2526,7 +2476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
 
 ### Authorization
 
@@ -2540,7 +2490,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersPost**
-> \Swagger\Client\Model\InlineResponse20019 leadsLeadIdUsersPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20022 leadsLeadIdUsersPost($body, $lead_id)
 
 Assign a user
 
@@ -2582,7 +2532,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
 
 ### Authorization
 
@@ -2596,7 +2546,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersUserIdDelete**
-> \Swagger\Client\Model\InlineResponse20020 leadsLeadIdUsersUserIdDelete($lead_id, $user_id)
+> \Swagger\Client\Model\InlineResponse20023 leadsLeadIdUsersUserIdDelete($lead_id, $user_id)
 
 Unassign a user from a lead
 
@@ -2638,7 +2588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
 
 ### Authorization
 
@@ -2759,8 +2709,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **leadsSmsTemplatesGet**
+> \Swagger\Client\Model\InlineResponse20031 leadsSmsTemplatesGet()
+
+Get list of sms templates
+
+Get list of available sms templates for sending sms to a lead
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\LeadsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->leadsSmsTemplatesGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LeadsApi->leadsSmsTemplatesGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **leadsSourcesGet**
-> \Swagger\Client\Model\InlineResponse20041 leadsSourcesGet()
+> \Swagger\Client\Model\InlineResponse20042 leadsSourcesGet()
 
 Get a list of available sources
 
@@ -2796,7 +2796,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\Swagger\Client\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
 
 ### Authorization
 
@@ -2810,7 +2810,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsStatusesGet**
-> \Swagger\Client\Model\InlineResponse20042 leadsStatusesGet()
+> \Swagger\Client\Model\InlineResponse20043 leadsStatusesGet()
 
 Get a list of available statuses
 
@@ -2846,7 +2846,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
+[**\Swagger\Client\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
 
 ### Authorization
 
@@ -2860,7 +2860,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsUsersGet**
-> \Swagger\Client\Model\InlineResponse20018 leadsUsersGet()
+> \Swagger\Client\Model\InlineResponse20021 leadsUsersGet()
 
 Get a list of available users
 
@@ -2896,7 +2896,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
 
 ### Authorization
 

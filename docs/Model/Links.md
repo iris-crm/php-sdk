@@ -8,5 +8,5 @@ Name | Type | Description | Notes
 **prev** | **string** | An URL to the previous page of the data set | [optional] 
 **next** | **string** | An URL to the next page of the data set | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

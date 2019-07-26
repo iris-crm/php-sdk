@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **group** | **int** | Group Id | [optional] 
 **fields** | [**\Swagger\Client\Model\LeadsFields[]**](LeadsFields.md) | Lead fields | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

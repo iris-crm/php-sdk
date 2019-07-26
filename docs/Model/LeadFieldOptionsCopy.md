@@ -7,5 +7,5 @@ Name | Type | Description | Notes
 **from** | **object** | Copy from | [optional] 
 **to** | **object** | Copy to | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -10,5 +10,5 @@ Name | Type | Description | Notes
 **body_html** | **string** | Email message including html | [optional] 
 **sent_at** | [**\DateTime**](\DateTime.md) | Date and time of receiving the email (ISO 8601) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

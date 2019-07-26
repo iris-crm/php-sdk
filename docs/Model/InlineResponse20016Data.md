@@ -3,11 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | Task Id | [optional] 
+**id** | **int** | Appointment Id | [optional] 
 **user** | [**\Swagger\Client\Model\BriefUserInfo**](BriefUserInfo.md) |  | [optional] 
-**text** | **string** | Task description | [optional] 
-**date** | [**\DateTime**](\DateTime.md) | Task Date and time in format ISO 8601 (Y-m-d\\TH:i:sP) | [optional] 
-**confirmed** | [**\DateTime**](\DateTime.md) | Task confirmed date and time in format ISO 8601 (Y-m-d\\TH:i:sP) | [optional] 
+**text** | **string** | Appointment description | [optional] 
+**date** | [**\DateTime**](\DateTime.md) | Appointment date and time in format ISO 8601 (Y-m-d\\TH:i:sP) | [optional] 
+**done** | **string** | Is appointment done? | [optional] 
+**confirmed** | [**\DateTime**](\DateTime.md) | Appointment confirmed date and time in format ISO 8601 (Y-m-d\\TH:i:sP) | [optional] 
+**seen** | [**\DateTime**](\DateTime.md) | Appointment seen date and time in format ISO 8601 (Y-m-d\\TH:i:sP) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

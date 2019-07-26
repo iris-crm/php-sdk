@@ -7,5 +7,5 @@ Name | Type | Description | Notes
 **name** | **string** | Lead Name | [optional] 
 **document** | [**\Swagger\Client\Model\LeadDocumentUploadedEventInfoDataLeadDocument**](LeadDocumentUploadedEventInfoDataLeadDocument.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **string** | Email has been sent successfully | [optional] 
-**email_id** | **string** | Id of email what will be sended to lead | [optional] 
+**message** | **string** | Result message | [optional] 
+**hash** | **string** | E-Sign hash | [optional] 
+**url** | **string** | E-Sign URL | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

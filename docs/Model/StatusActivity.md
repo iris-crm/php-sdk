@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **old_status** | **string** | Old status | [optional] 
 **new_status** | **string** | New status | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

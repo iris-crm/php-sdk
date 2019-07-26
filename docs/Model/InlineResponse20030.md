@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\DuplicateActivity[]**](DuplicateActivity.md) |  | [optional] 
-**links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
-**meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
+**message** | **string** | SMS has been sent successfully. | [optional] 
+**receiver** | **string** | Phone number of SMS receiver. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

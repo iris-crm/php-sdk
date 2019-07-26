@@ -14,10 +14,11 @@ Name | Type | Description | Notes
 **group** | **string** | Group name | [optional] 
 **processor** | **string** | Processor name | [optional] 
 **datasource** | **string** | Data source name | [optional] 
+**sic_code** | **string** | SIC Code | [optional] 
 **vim** | **string** | Is VIM? | [optional] 
 **deactivated** | [**\DateTime**](\DateTime.md) | Merchant deactivation date | [optional] 
 **status** | **string** | Merchant status | [optional] 
 **active** | **string** | Merchant active flag | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

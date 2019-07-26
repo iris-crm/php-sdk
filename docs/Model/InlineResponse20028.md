@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\CampaignActivity[]**](CampaignActivity.md) |  | [optional] 
-**links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
-**meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
+**message** | **string** | Email has been sent successfully | [optional] 
+**email_id** | **string** | Id of email what will be sended to lead | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

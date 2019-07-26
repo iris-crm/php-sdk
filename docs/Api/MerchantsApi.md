@@ -4,14 +4,14 @@ All URIs are relative to *https://iriscrm.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**merchantsGet**](MerchantsApi.md#merchantsGet) | **GET** /merchants | Get a list of merchants
-[**merchantsMerchantNumberChargebacksGet**](MerchantsApi.md#merchantsMerchantNumberChargebacksGet) | **GET** /merchants/{merchantNumber}/chargebacks | Get a list of chargebacks
-[**merchantsMerchantNumberGet**](MerchantsApi.md#merchantsMerchantNumberGet) | **GET** /merchants/{merchantNumber} | Get detailed merchant information
-[**merchantsMerchantNumberPatch**](MerchantsApi.md#merchantsMerchantNumberPatch) | **PATCH** /merchants/{merchantNumber} | Update an existing merchant
-[**merchantsMerchantNumberRetrievalsGet**](MerchantsApi.md#merchantsMerchantNumberRetrievalsGet) | **GET** /merchants/{merchantNumber}/retrievals | Get a list of retrievals
-[**merchantsMerchantNumberStatementsGet**](MerchantsApi.md#merchantsMerchantNumberStatementsGet) | **GET** /merchants/{merchantNumber}/statements | Get a list of statements
-[**merchantsMerchantNumberStatementsStatementIdGet**](MerchantsApi.md#merchantsMerchantNumberStatementsStatementIdGet) | **GET** /merchants/{merchantNumber}/statements/{statementId} | Download a statement
-[**merchantsMerchantNumberTransactionsGet**](MerchantsApi.md#merchantsMerchantNumberTransactionsGet) | **GET** /merchants/{merchantNumber}/transactions | Get a list of batches and transactions
+[**merchantsGet**](MerchantsApi.md#merchantsget) | **GET** /merchants | Get a list of merchants
+[**merchantsMerchantNumberChargebacksGet**](MerchantsApi.md#merchantsmerchantnumberchargebacksget) | **GET** /merchants/{merchantNumber}/chargebacks | Get a list of chargebacks
+[**merchantsMerchantNumberGet**](MerchantsApi.md#merchantsmerchantnumberget) | **GET** /merchants/{merchantNumber} | Get detailed merchant information
+[**merchantsMerchantNumberPatch**](MerchantsApi.md#merchantsmerchantnumberpatch) | **PATCH** /merchants/{merchantNumber} | Update an existing merchant
+[**merchantsMerchantNumberRetrievalsGet**](MerchantsApi.md#merchantsmerchantnumberretrievalsget) | **GET** /merchants/{merchantNumber}/retrievals | Get a list of retrievals
+[**merchantsMerchantNumberStatementsGet**](MerchantsApi.md#merchantsmerchantnumberstatementsget) | **GET** /merchants/{merchantNumber}/statements | Get a list of statements
+[**merchantsMerchantNumberStatementsStatementIdGet**](MerchantsApi.md#merchantsmerchantnumberstatementsstatementidget) | **GET** /merchants/{merchantNumber}/statements/{statementId} | Download a statement
+[**merchantsMerchantNumberTransactionsGet**](MerchantsApi.md#merchantsmerchantnumbertransactionsget) | **GET** /merchants/{merchantNumber}/transactions | Get a list of batches and transactions
 
 # **merchantsGet**
 > \Swagger\Client\Model\InlineResponse200 merchantsGet($page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date)
@@ -47,8 +47,8 @@ $vim = "vim_example"; // string | Filter merchants by a merchant vim field
 $active = "active_example"; // string | Filter merchants by a merchant active field
 $status = "status_example"; // string | Filter merchants by a merchant status field
 $date_filter = "date_filter_example"; // string | Filter merchants by a merchant specific date field
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start date for date_filter filter in format ISO 8601(Y-m-d\\TH:i:sP) for created and modified properties, for others properties you should use simple date format (Y-m-d).
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End date for date_filter filter in format ISO 8601(Y-m-d\\TH:i:sP) for created and modified properties, for others properties you should use simple date format (Y-m-d)
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start date for date_filter filter in format ISO 8601 for created and modified properties, for others properties you should use simple date format (Y-m-d).
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End date for date_filter filter in format ISO 8601 for created and modified properties, for others properties you should use simple date format (Y-m-d)
 
 try {
     $result = $apiInstance->merchantsGet($page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date);
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
  **active** | **string**| Filter merchants by a merchant active field | [optional]
  **status** | **string**| Filter merchants by a merchant status field | [optional]
  **date_filter** | **string**| Filter merchants by a merchant specific date field | [optional]
- **start_date** | **\DateTime**| Start date for date_filter filter in format ISO 8601(Y-m-d\\TH:i:sP) for created and modified properties, for others properties you should use simple date format (Y-m-d). | [optional]
- **end_date** | **\DateTime**| End date for date_filter filter in format ISO 8601(Y-m-d\\TH:i:sP) for created and modified properties, for others properties you should use simple date format (Y-m-d) | [optional]
+ **start_date** | **\DateTime**| Start date for date_filter filter in format ISO 8601 for created and modified properties, for others properties you should use simple date format (Y-m-d). | [optional]
+ **end_date** | **\DateTime**| End date for date_filter filter in format ISO 8601 for created and modified properties, for others properties you should use simple date format (Y-m-d) | [optional]
 
 ### Return type
 

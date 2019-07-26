@@ -4,22 +4,25 @@ All URIs are relative to *https://iriscrm.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**subscriptionsGet**](SubscriptionsApi.md#subscriptionsGet) | **GET** /subscriptions | Return a list of subscriptions
-[**subscriptionsPost**](SubscriptionsApi.md#subscriptionsPost) | **POST** /subscriptions | Create a subscription
-[**subscriptionsSampleLeadCreatedGet**](SubscriptionsApi.md#subscriptionsSampleLeadCreatedGet) | **GET** /subscriptions/sample/lead.created | Data sample for the \&quot;lead.created\&quot; event
-[**subscriptionsSampleLeadDeletedGet**](SubscriptionsApi.md#subscriptionsSampleLeadDeletedGet) | **GET** /subscriptions/sample/lead.deleted | Data sample for the \&quot;lead.deleted\&quot; event
-[**subscriptionsSampleLeadDocumentUploadedGet**](SubscriptionsApi.md#subscriptionsSampleLeadDocumentUploadedGet) | **GET** /subscriptions/sample/lead.document.uploaded | Data sample for the \&quot;lead.document.uploaded\&quot; event
-[**subscriptionsSampleLeadEmailReceivedGet**](SubscriptionsApi.md#subscriptionsSampleLeadEmailReceivedGet) | **GET** /subscriptions/sample/lead.email.received | Data sample for the \&quot;lead.email.received\&quot; event
-[**subscriptionsSampleLeadNoteAddedGet**](SubscriptionsApi.md#subscriptionsSampleLeadNoteAddedGet) | **GET** /subscriptions/sample/lead.note.added | Data sample for the \&quot;lead.note.added\&quot; event
-[**subscriptionsSampleLeadRestoredGet**](SubscriptionsApi.md#subscriptionsSampleLeadRestoredGet) | **GET** /subscriptions/sample/lead.restored | Data sample for the \&quot;lead.restored\&quot; event
-[**subscriptionsSampleLeadStatusUpdatedGet**](SubscriptionsApi.md#subscriptionsSampleLeadStatusUpdatedGet) | **GET** /subscriptions/sample/lead.status.updated | Data sample for the \&quot;lead.status.updated\&quot; event
-[**subscriptionsSampleLeadUpdatedGet**](SubscriptionsApi.md#subscriptionsSampleLeadUpdatedGet) | **GET** /subscriptions/sample/lead.updated | Data sample for the \&quot;lead.updated\&quot; event
-[**subscriptionsSubscriptionIdDelete**](SubscriptionsApi.md#subscriptionsSubscriptionIdDelete) | **DELETE** /subscriptions/{subscriptionId} | Delete a subscription
-[**subscriptionsSubscriptionIdGet**](SubscriptionsApi.md#subscriptionsSubscriptionIdGet) | **GET** /subscriptions/{subscriptionId} | Return a subscription by its id
-[**subscriptionsSubscriptionIdPatch**](SubscriptionsApi.md#subscriptionsSubscriptionIdPatch) | **PATCH** /subscriptions/{subscriptionId} | Update a subscription
+[**subscriptionsGet**](SubscriptionsApi.md#subscriptionsget) | **GET** /subscriptions | Return a list of subscriptions
+[**subscriptionsPost**](SubscriptionsApi.md#subscriptionspost) | **POST** /subscriptions | Create a subscription
+[**subscriptionsSampleApiUpdatedGet**](SubscriptionsApi.md#subscriptionssampleapiupdatedget) | **GET** /subscriptions/sample/api.updated | Data sample for the \&quot;api.updated\&quot; event
+[**subscriptionsSampleApplicationCreatedGet**](SubscriptionsApi.md#subscriptionssampleapplicationcreatedget) | **GET** /subscriptions/sample/application.created | Data sample for the \&quot;application.created\&quot; event
+[**subscriptionsSampleApplicationUpdatedGet**](SubscriptionsApi.md#subscriptionssampleapplicationupdatedget) | **GET** /subscriptions/sample/application.updated | Data sample for the \&quot;application.updated\&quot; event
+[**subscriptionsSampleLeadCreatedGet**](SubscriptionsApi.md#subscriptionssampleleadcreatedget) | **GET** /subscriptions/sample/lead.created | Data sample for the \&quot;lead.created\&quot; event
+[**subscriptionsSampleLeadDeletedGet**](SubscriptionsApi.md#subscriptionssampleleaddeletedget) | **GET** /subscriptions/sample/lead.deleted | Data sample for the \&quot;lead.deleted\&quot; event
+[**subscriptionsSampleLeadDocumentUploadedGet**](SubscriptionsApi.md#subscriptionssampleleaddocumentuploadedget) | **GET** /subscriptions/sample/lead.document.uploaded | Data sample for the \&quot;lead.document.uploaded\&quot; event
+[**subscriptionsSampleLeadEmailReceivedGet**](SubscriptionsApi.md#subscriptionssampleleademailreceivedget) | **GET** /subscriptions/sample/lead.email.received | Data sample for the \&quot;lead.email.received\&quot; event
+[**subscriptionsSampleLeadNoteAddedGet**](SubscriptionsApi.md#subscriptionssampleleadnoteaddedget) | **GET** /subscriptions/sample/lead.note.added | Data sample for the \&quot;lead.note.added\&quot; event
+[**subscriptionsSampleLeadRestoredGet**](SubscriptionsApi.md#subscriptionssampleleadrestoredget) | **GET** /subscriptions/sample/lead.restored | Data sample for the \&quot;lead.restored\&quot; event
+[**subscriptionsSampleLeadStatusUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadstatusupdatedget) | **GET** /subscriptions/sample/lead.status.updated | Data sample for the \&quot;lead.status.updated\&quot; event
+[**subscriptionsSampleLeadUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadupdatedget) | **GET** /subscriptions/sample/lead.updated | Data sample for the \&quot;lead.updated\&quot; event
+[**subscriptionsSubscriptionIdDelete**](SubscriptionsApi.md#subscriptionssubscriptioniddelete) | **DELETE** /subscriptions/{subscriptionId} | Delete a subscription
+[**subscriptionsSubscriptionIdGet**](SubscriptionsApi.md#subscriptionssubscriptionidget) | **GET** /subscriptions/{subscriptionId} | Return a subscription by its id
+[**subscriptionsSubscriptionIdPatch**](SubscriptionsApi.md#subscriptionssubscriptionidpatch) | **PATCH** /subscriptions/{subscriptionId} | Update a subscription
 
 # **subscriptionsGet**
-> \Swagger\Client\Model\InlineResponse20043 subscriptionsGet($page)
+> \Swagger\Client\Model\InlineResponse20044 subscriptionsGet($page)
 
 Return a list of subscriptions
 
@@ -59,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
+[**\Swagger\Client\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
 
 ### Authorization
 
@@ -94,7 +97,7 @@ $apiInstance = new Swagger\Client\Api\SubscriptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body9(); // \Swagger\Client\Model\Body9 | Subscription details
+$body = new \Swagger\Client\Model\BriefSubscriptionInfo(); // \Swagger\Client\Model\BriefSubscriptionInfo | Subscription details
 
 try {
     $result = $apiInstance->subscriptionsPost($body);
@@ -109,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body9**](../Model/Body9.md)| Subscription details |
+ **body** | [**\Swagger\Client\Model\BriefSubscriptionInfo**](../Model/BriefSubscriptionInfo.md)| Subscription details |
 
 ### Return type
 
@@ -122,6 +125,156 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleApiUpdatedGet**
+> \Swagger\Client\Model\ApiUpdated subscriptionsSampleApiUpdatedGet()
+
+Data sample for the \"api.updated\" event
+
+Receive a notification when a API is updated.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleApiUpdatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleApiUpdatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ApiUpdated**](../Model/ApiUpdated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleApplicationCreatedGet**
+> \Swagger\Client\Model\ApplicationCreated subscriptionsSampleApplicationCreatedGet()
+
+Data sample for the \"application.created\" event
+
+Receive a notification when application is submited.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleApplicationCreatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleApplicationCreatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ApplicationCreated**](../Model/ApplicationCreated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleApplicationUpdatedGet**
+> \Swagger\Client\Model\ApplicationUpdated subscriptionsSampleApplicationUpdatedGet()
+
+Data sample for the \"application.updated\" event
+
+Receive a notification when application account is updated.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleApplicationUpdatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleApplicationUpdatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ApplicationUpdated**](../Model/ApplicationUpdated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -527,7 +680,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionsSubscriptionIdDelete**
-> \Swagger\Client\Model\InlineResponse20044 subscriptionsSubscriptionIdDelete($subscription_id)
+> \Swagger\Client\Model\InlineResponse20045 subscriptionsSubscriptionIdDelete($subscription_id)
 
 Delete a subscription
 
@@ -567,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
+[**\Swagger\Client\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
 
 ### Authorization
 
@@ -656,7 +809,7 @@ $apiInstance = new Swagger\Client\Api\SubscriptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body10(); // \Swagger\Client\Model\Body10 | Subscription details
+$body = new \Swagger\Client\Model\BriefSubscriptionInfo(); // \Swagger\Client\Model\BriefSubscriptionInfo | Subscription details
 $subscription_id = 56; // int | Subscription Id
 
 try {
@@ -672,7 +825,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body10**](../Model/Body10.md)| Subscription details |
+ **body** | [**\Swagger\Client\Model\BriefSubscriptionInfo**](../Model/BriefSubscriptionInfo.md)| Subscription details |
  **subscription_id** | **int**| Subscription Id |
 
 ### Return type

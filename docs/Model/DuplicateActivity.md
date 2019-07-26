@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **duplicated_by** | **int** | User Id | [optional] 
 **duplicated_at** | [**\DateTime**](\DateTime.md) | Date of duplication (Y-m-d\\TH:i:sP) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

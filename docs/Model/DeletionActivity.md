@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **undeleted_id** | **int** | User Id | [optional] 
 **undeleted_at** | [**\DateTime**](\DateTime.md) | Date of undeletion (Y-m-d\\TH:i:sP) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
