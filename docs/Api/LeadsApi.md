@@ -58,7 +58,7 @@ Method | HTTP request | Description
 [**leadsUsersGet**](LeadsApi.md#leadsusersget) | **GET** /leads/users | Get a list of available users
 
 # **leadsApplicationsAppIdMappingsGet**
-> \Swagger\Client\Model\InlineResponse20038 leadsApplicationsAppIdMappingsGet($app_id)
+> \Swagger\Client\Model\InlineResponse20038 leadsApplicationsAppIdMappingsGet($app_id, $page, $per_page)
 
 Get a list of available application field mappings
 
@@ -80,9 +80,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $app_id = 56; // int | Application Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsGet($app_id);
+    $result = $apiInstance->leadsApplicationsAppIdMappingsGet($app_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsGet: ', $e->getMessage(), PHP_EOL;
@@ -95,6 +97,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app_id** | **int**| Application Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -654,7 +658,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsGet**
-> \Swagger\Client\Model\InlineResponse20011 leadsFieldsGet()
+> \Swagger\Client\Model\InlineResponse20011 leadsFieldsGet($page, $per_page)
 
 Get a list of available lead fields
 
@@ -675,9 +679,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsFieldsGet();
+    $result = $apiInstance->leadsFieldsGet($page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsFieldsGet: ', $e->getMessage(), PHP_EOL;
@@ -686,7 +692,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -758,7 +768,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsTabsGet**
-> \Swagger\Client\Model\InlineResponse20013 leadsFieldsTabsGet()
+> \Swagger\Client\Model\InlineResponse20013 leadsFieldsTabsGet($page, $per_page)
 
 Get a list of all lead field tabs
 
@@ -779,9 +789,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsFieldsTabsGet();
+    $result = $apiInstance->leadsFieldsTabsGet($page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsFieldsTabsGet: ', $e->getMessage(), PHP_EOL;
@@ -790,7 +802,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -972,7 +988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsGet**
-> \Swagger\Client\Model\InlineResponse2007 leadsGet($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
+> \Swagger\Client\Model\InlineResponse2007 leadsGet($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
 
 Get a list of leads
 
@@ -994,6 +1010,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 $sort_by = "sort_by_example"; // string | Sorting of leads by the field value
 $sort_dir = "sort_dir_example"; // string | Direction of sorting
 $group = 56; // int | Filter leads by a group id
@@ -1009,7 +1026,7 @@ $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter le
 $email = "email_example"; // string | Filter leads by a email
 
 try {
-    $result = $apiInstance->leadsGet($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
+    $result = $apiInstance->leadsGet($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsGet: ', $e->getMessage(), PHP_EOL;
@@ -1022,6 +1039,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
  **sort_by** | **string**| Sorting of leads by the field value | [optional]
  **sort_dir** | **string**| Direction of sorting | [optional]
  **group** | **int**| Filter leads by a group id | [optional]
@@ -1052,7 +1070,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsGroupsGet**
-> \Swagger\Client\Model\InlineResponse20041 leadsGroupsGet()
+> \Swagger\Client\Model\InlineResponse20041 leadsGroupsGet($status)
 
 Get a list of available groups
 
@@ -1073,9 +1091,10 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$status = 56; // int | Status Id
 
 try {
-    $result = $apiInstance->leadsGroupsGet();
+    $result = $apiInstance->leadsGroupsGet($status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsGroupsGet: ', $e->getMessage(), PHP_EOL;
@@ -1084,7 +1103,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | **int**| Status Id | [optional]
 
 ### Return type
 
@@ -1102,7 +1124,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityCampaignGet**
-> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdActivityCampaignGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdActivityCampaignGet($lead_id, $page, $per_page)
 
 Get a list of all lead campaign activity
 
@@ -1124,9 +1146,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivityCampaignGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivityCampaignGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivityCampaignGet: ', $e->getMessage(), PHP_EOL;
@@ -1139,6 +1163,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1156,7 +1182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDeletionGet**
-> \Swagger\Client\Model\InlineResponse20033 leadsLeadIdActivityDeletionGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20033 leadsLeadIdActivityDeletionGet($lead_id, $page, $per_page)
 
 Get a list of all lead deletion activity
 
@@ -1178,9 +1204,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivityDeletionGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivityDeletionGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivityDeletionGet: ', $e->getMessage(), PHP_EOL;
@@ -1193,6 +1221,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1210,7 +1240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDuplicatesGet**
-> \Swagger\Client\Model\InlineResponse20034 leadsLeadIdActivityDuplicatesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20034 leadsLeadIdActivityDuplicatesGet($lead_id, $page, $per_page)
 
 Get a list of all lead duplicate activity
 
@@ -1232,9 +1262,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivityDuplicatesGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivityDuplicatesGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivityDuplicatesGet: ', $e->getMessage(), PHP_EOL;
@@ -1247,6 +1279,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1264,7 +1298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityLinksGet**
-> \Swagger\Client\Model\InlineResponse20035 leadsLeadIdActivityLinksGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20035 leadsLeadIdActivityLinksGet($lead_id, $page, $per_page)
 
 Get a list of all lead links activity
 
@@ -1286,9 +1320,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivityLinksGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivityLinksGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivityLinksGet: ', $e->getMessage(), PHP_EOL;
@@ -1301,6 +1337,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1318,7 +1356,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivitySourceGet**
-> \Swagger\Client\Model\InlineResponse20036 leadsLeadIdActivitySourceGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20036 leadsLeadIdActivitySourceGet($lead_id, $page, $per_page)
 
 Get a list of all lead source activity
 
@@ -1340,9 +1378,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivitySourceGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivitySourceGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivitySourceGet: ', $e->getMessage(), PHP_EOL;
@@ -1355,6 +1395,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1372,7 +1414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityStatusGet**
-> \Swagger\Client\Model\InlineResponse20037 leadsLeadIdActivityStatusGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20037 leadsLeadIdActivityStatusGet($lead_id, $page, $per_page)
 
 Get a list of all lead status activity
 
@@ -1394,9 +1436,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdActivityStatusGet($lead_id);
+    $result = $apiInstance->leadsLeadIdActivityStatusGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdActivityStatusGet: ', $e->getMessage(), PHP_EOL;
@@ -1409,6 +1453,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1482,7 +1528,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdAppointmentsGet**
-> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdAppointmentsGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdAppointmentsGet($lead_id, $page, $per_page)
 
 Get lead appointments
 
@@ -1504,9 +1550,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdAppointmentsGet($lead_id);
+    $result = $apiInstance->leadsLeadIdAppointmentsGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdAppointmentsGet: ', $e->getMessage(), PHP_EOL;
@@ -1519,6 +1567,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1648,7 +1698,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdDocumentsGet**
-> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdDocumentsGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdDocumentsGet($lead_id, $page, $per_page)
 
 Get a list of available documents
 
@@ -1670,9 +1720,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdDocumentsGet($lead_id);
+    $result = $apiInstance->leadsLeadIdDocumentsGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdDocumentsGet: ', $e->getMessage(), PHP_EOL;
@@ -1685,6 +1737,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -1934,7 +1988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdNotesGet**
-> \Swagger\Client\Model\InlineResponse20014 leadsLeadIdNotesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20014 leadsLeadIdNotesGet($lead_id, $page, $per_page)
 
 Get lead notes
 
@@ -1956,9 +2010,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdNotesGet($lead_id);
+    $result = $apiInstance->leadsLeadIdNotesGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdNotesGet: ', $e->getMessage(), PHP_EOL;
@@ -1971,6 +2027,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -2214,7 +2272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSignaturesGet**
-> \Swagger\Client\Model\InlineResponse20026 leadsLeadIdSignaturesGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20026 leadsLeadIdSignaturesGet($lead_id, $page, $per_page)
 
 Get a list of all lead e-signatures documents
 
@@ -2236,9 +2294,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdSignaturesGet($lead_id);
+    $result = $apiInstance->leadsLeadIdSignaturesGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdSignaturesGet: ', $e->getMessage(), PHP_EOL;
@@ -2251,6 +2311,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -2326,7 +2388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdTasksGet**
-> \Swagger\Client\Model\InlineResponse20019 leadsLeadIdTasksGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20019 leadsLeadIdTasksGet($lead_id, $page, $per_page)
 
 Get lead tasks
 
@@ -2348,9 +2410,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdTasksGet($lead_id);
+    $result = $apiInstance->leadsLeadIdTasksGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdTasksGet: ', $e->getMessage(), PHP_EOL;
@@ -2363,6 +2427,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -2436,7 +2502,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersGet**
-> \Swagger\Client\Model\InlineResponse20021 leadsLeadIdUsersGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20021 leadsLeadIdUsersGet($lead_id, $page, $per_page)
 
 Get a list of assigned users
 
@@ -2458,9 +2524,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $lead_id = 56; // int | Lead Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsLeadIdUsersGet($lead_id);
+    $result = $apiInstance->leadsLeadIdUsersGet($lead_id, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdUsersGet: ', $e->getMessage(), PHP_EOL;
@@ -2473,6 +2541,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -2810,7 +2880,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsStatusesGet**
-> \Swagger\Client\Model\InlineResponse20043 leadsStatusesGet()
+> \Swagger\Client\Model\InlineResponse20043 leadsStatusesGet($group)
 
 Get a list of available statuses
 
@@ -2831,9 +2901,10 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$group = 56; // int | Group Id
 
 try {
-    $result = $apiInstance->leadsStatusesGet();
+    $result = $apiInstance->leadsStatusesGet($group);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsStatusesGet: ', $e->getMessage(), PHP_EOL;
@@ -2842,7 +2913,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group** | **int**| Group Id | [optional]
 
 ### Return type
 
@@ -2860,7 +2934,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsUsersGet**
-> \Swagger\Client\Model\InlineResponse20021 leadsUsersGet()
+> \Swagger\Client\Model\InlineResponse20021 leadsUsersGet($page, $per_page)
 
 Get a list of available users
 
@@ -2881,9 +2955,11 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsUsersGet();
+    $result = $apiInstance->leadsUsersGet($page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsUsersGet: ', $e->getMessage(), PHP_EOL;
@@ -2892,7 +2968,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 

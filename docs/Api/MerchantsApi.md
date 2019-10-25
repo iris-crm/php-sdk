@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**merchantsMerchantNumberTransactionsGet**](MerchantsApi.md#merchantsmerchantnumbertransactionsget) | **GET** /merchants/{merchantNumber}/transactions | Get a list of batches and transactions
 
 # **merchantsGet**
-> \Swagger\Client\Model\InlineResponse200 merchantsGet($page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date)
+> \Swagger\Client\Model\InlineResponse200 merchantsGet($page, $per_page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date)
 
 Get a list of merchants
 
@@ -36,6 +36,7 @@ $apiInstance = new Swagger\Client\Api\MerchantsApi(
     $config
 );
 $page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 $sort_by = "sort_by_example"; // string | Sorting of merchants by the field value
 $sort_dir = "sort_dir_example"; // string | Direction of sorting
 $group = "group_example"; // string | Filter merchants by a group name
@@ -51,7 +52,7 @@ $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start d
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End date for date_filter filter in format ISO 8601 for created and modified properties, for others properties you should use simple date format (Y-m-d)
 
 try {
-    $result = $apiInstance->merchantsGet($page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date);
+    $result = $apiInstance->merchantsGet($page, $per_page, $sort_by, $sort_dir, $group, $processor, $datasource, $mid, $name, $vim, $active, $status, $date_filter, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->merchantsGet: ', $e->getMessage(), PHP_EOL;
@@ -64,6 +65,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
  **sort_by** | **string**| Sorting of merchants by the field value | [optional]
  **sort_dir** | **string**| Direction of sorting | [optional]
  **group** | **string**| Filter merchants by a group name | [optional]
@@ -94,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **merchantsMerchantNumberChargebacksGet**
-> \Swagger\Client\Model\InlineResponse2004 merchantsMerchantNumberChargebacksGet($merchant_number, $start_date, $end_date)
+> \Swagger\Client\Model\InlineResponse2004 merchantsMerchantNumberChargebacksGet($merchant_number, $page, $per_page, $start_date, $end_date)
 
 Get a list of chargebacks
 
@@ -116,11 +118,13 @@ $apiInstance = new Swagger\Client\Api\MerchantsApi(
     $config
 );
 $merchant_number = 56; // int | Merchant number
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 
 try {
-    $result = $apiInstance->merchantsMerchantNumberChargebacksGet($merchant_number, $start_date, $end_date);
+    $result = $apiInstance->merchantsMerchantNumberChargebacksGet($merchant_number, $page, $per_page, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->merchantsMerchantNumberChargebacksGet: ', $e->getMessage(), PHP_EOL;
@@ -133,6 +137,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_number** | **int**| Merchant number |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
  **start_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
  **end_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
 
@@ -262,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **merchantsMerchantNumberRetrievalsGet**
-> \Swagger\Client\Model\InlineResponse2005 merchantsMerchantNumberRetrievalsGet($merchant_number, $start_date, $end_date)
+> \Swagger\Client\Model\InlineResponse2005 merchantsMerchantNumberRetrievalsGet($merchant_number, $page, $per_page, $start_date, $end_date)
 
 Get a list of retrievals
 
@@ -284,11 +290,13 @@ $apiInstance = new Swagger\Client\Api\MerchantsApi(
     $config
 );
 $merchant_number = 56; // int | Merchant number
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 
 try {
-    $result = $apiInstance->merchantsMerchantNumberRetrievalsGet($merchant_number, $start_date, $end_date);
+    $result = $apiInstance->merchantsMerchantNumberRetrievalsGet($merchant_number, $page, $per_page, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->merchantsMerchantNumberRetrievalsGet: ', $e->getMessage(), PHP_EOL;
@@ -301,6 +309,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_number** | **int**| Merchant number |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
  **start_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
  **end_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
 
@@ -320,7 +330,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **merchantsMerchantNumberStatementsGet**
-> \Swagger\Client\Model\InlineResponse2006 merchantsMerchantNumberStatementsGet($merchant_number)
+> \Swagger\Client\Model\InlineResponse2006 merchantsMerchantNumberStatementsGet($merchant_number, $page, $per_page)
 
 Get a list of statements
 
@@ -342,9 +352,11 @@ $apiInstance = new Swagger\Client\Api\MerchantsApi(
     $config
 );
 $merchant_number = 56; // int | Merchant number
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->merchantsMerchantNumberStatementsGet($merchant_number);
+    $result = $apiInstance->merchantsMerchantNumberStatementsGet($merchant_number, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->merchantsMerchantNumberStatementsGet: ', $e->getMessage(), PHP_EOL;
@@ -357,6 +369,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_number** | **int**| Merchant number |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
@@ -430,7 +444,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **merchantsMerchantNumberTransactionsGet**
-> \Swagger\Client\Model\InlineResponse2003 merchantsMerchantNumberTransactionsGet($merchant_number, $start_date, $end_date)
+> \Swagger\Client\Model\InlineResponse2003 merchantsMerchantNumberTransactionsGet($merchant_number, $page, $per_page, $start_date, $end_date)
 
 Get a list of batches and transactions
 
@@ -452,11 +466,13 @@ $apiInstance = new Swagger\Client\Api\MerchantsApi(
     $config
 );
 $merchant_number = 56; // int | Merchant number
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter batches by a date (Y-m-d)
 
 try {
-    $result = $apiInstance->merchantsMerchantNumberTransactionsGet($merchant_number, $start_date, $end_date);
+    $result = $apiInstance->merchantsMerchantNumberTransactionsGet($merchant_number, $page, $per_page, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->merchantsMerchantNumberTransactionsGet: ', $e->getMessage(), PHP_EOL;
@@ -469,6 +485,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_number** | **int**| Merchant number |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
  **start_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
  **end_date** | **\DateTime**| Filter batches by a date (Y-m-d) | [optional]
 

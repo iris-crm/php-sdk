@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\BriefMerchantInfo[]**](BriefMerchantInfo.md) |  | [optional] 
+**data** | [**null[]**](.md) |  | [optional] 
 **links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
 **meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 

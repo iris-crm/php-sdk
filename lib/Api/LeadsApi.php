@@ -12,12 +12,12 @@
 /**
  * IRIS API
  *
- * # Introduction Welcome to IRIS’s API!  The API is organized around `REST`. All requests should be made over `SSL`.  All request and response bodies, including errors, are encoded in `JSON`. # Open API The Open API provides numerous functions to access or to update your CRM lead and merchant data using simple REST calls. ### You can use the Lead API to: - Get a list of leads with field data, notes, appointments, tasks, users and, documents - Get a list of available campaigns, groups, sources, and statuses - Create a new lead, lead note, task, or an appointment - Assign and un-assign users to a lead - Upload or download documents - Update field data, status, campaign, group, and source - Generate an e-signature application and get a list of available apps  ### You can use the Merchant API to: - Get daily merchant deposits and transactions - Get daily chargebacks and retrievals - Get monthly merchant PDF statements - Get a list of merchants by demographics such as processor or group - Get merchant demographic profile information using the merchant id - Make updates to merchant profiles in real-time  # Generate an API token When you send an API request, you will need to include an API token in your request in order to authenticate your account.  The tokens are generated in the CRM by each user individually, and each user may create one or more tokens.  To generate a new API Token, open your user settings page by clicking on your username in the top-right corner, and clicking on the ** Settings ** link or you can use the <a href=\"https://iriscrm.com/settings\">link</a>.  Then open the ** API Settings ** tab, click ** Create New API Token **, configure your token’s settings as needed, and click ** Add New Token **:  <img src='https://iriscrm.com/images/docs/mapi001.png'/>  Your new token will now be created and displayed in a popup window:  <img src='https://iriscrm.com/images/docs/mapi002.png'/>  Once the token is created, it will be shown in the list of available API Tokens where you can copy the token, update its settings, or delete it once it’s no longer needed:  <img src='https://iriscrm.com/images/docs/mapi003.png'/>  ** Note: ** The created tokens will inherit the user’s permissions to assigned merchants, leads, groups and processors. # Using the API Authentication to the API is performed via `X-API-KEY` header. Requests not properly authenticated will return a `401` error code.  `curl -X GET \"https://iriscrm.com/api/v1/merchants/[MID HERE]\" -H \"accept: application/json\" -H \"X-API-KEY: [YOURKEY]\"`  Note that all requests should be made over `SSL`. All request and response bodies, including errors, are encoded in JSON.  The API returns standard HTTP success or error status codes. In case of errors, additional information about what went wrong will be encoded in the response as JSON.  By default, you can make `120` requests per minute. Check the returned HTTP headers of any API request to see your current rate limit status. # Using the Subscription API API Subscriptions are used to send information about an event to a URL and trigger an API call. This is more efficient than doing scheduled API calls.  To create a subscription, use the API Settings page or send a request using the instructions in the Subscriptions section below.  All you need to know is the events you want to be subscribed for and the url to which the updates need to be sent.  To create subscriptions using our GUI open tab ** API Settings ** at ** https://iriscrm.com/settings **:  <img src='https://iriscrm.com/images/docs/new-subscription.png'/> # Authentication Authenticate your account by including your secret key in API requests. Do not share your secret API keys in publicly accessible areas, client-side code, and so forth. Authentication to the API is performed via `X-API-KEY` header. Requests not properly authenticated will return a `401` error code. # Errors Our API returns standard `HTTP` success or error status codes. For errors, we will also include extra information about what went wrong encoded in the response as `JSON`. # Limiting You can make `120` requests per minute. If you will reach a limit you will get a `429: Too Many Attempts.` response from the server. Check the returned `HTTP` headers of any API request to see your current rate limit status. Headers description: * `X-RateLimit-Limit` tells you the max number of requests you're allowed to make within this application's time period * `X-RateLimit-Remaining` tells you how many requests you have left within this current time period * `Retry-After` tells you how many seconds to wait until you try again. (you'll only get `Retry-After` if you've hit the limit).   # PHP SDK  ### Installation and Usage  #### Availability  The IRIS CRM PHP SDK requires PHP version 5.5 or higher and the PHP cURL extension.  #### Composer  To install the bindings via [Composer](http://getcomposer.org/), please run:  ```bash  composer require iris-crm/php-sdk      ```   In your code, configure the environment and API credentials:  ```php require_once(__DIR__ . '/vendor/autoload.php');  use Swagger\\Client\\Configuration; use Swagger\\Client\\Api\\LeadsApi;  // Configure API key authorization $config = Configuration::getDefaultConfiguration() ->setApiKey('X-API-KEY', 'YOUR_API_KEY') ->setHost('https://iriscrm.com/api/v1/'); $apiInstance = new LeadsApi(null, $config);  $page        = 1; // int | Page number $sort_by     = \"created\"; // string | Sorting of leads by the field value $sort_dir    = \"asc\"; // string | Direction of sorting $group       = 2; // int | Filter leads by a group id $campaign    = 3; // int | Filter leads by a campaign id $source      = 4; // int | Filter leads by a source id $status      = 1; // int | Filter leads by a status id $category    = 1; // int | Filter leads by a status category id $user        = 12; // int | Filter leads by a user id $date_filter = \"created\"; // string | Filtering leads by a date range depends on this filter $start_date  = new \\DateTime(\"2018-10-20T19:20:30+01:00\"); // \\DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\\\TH:i:sP) $end_date    = new \\DateTime(\"2019-10-20T19:20:30+01:00\"); // \\DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\\\TH:i:sP) $email       = \"test@mail.com\"; // string | Filter leads by a email try {     $result = $apiInstance->leadsGet($page, $sort_by, $sort_dir, $group, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);     print_r($result); } catch (Exception $e) {     echo 'Exception when calling LeadsApi->leadsGet: ', $e->getMessage(), PHP_EOL; } ``` Swagger\\Client\\Api\\LeadsApi it's a SDK Class for Lead endpoints.  On this example you can see how we can get a list of leads.  All parameters for leadsGet method is optional and can be skipped.  If you want skip some parameters - you need to set parameter to `null`  ### API Endpoints All URIs are relative to *https://iriscrm.com/api/v1*  Class | Method | HTTP request | Description ------------ | ------------- | ------------- | ------------- *LeadsApi* | **leadsApplicationsAppIdMappingsGet** | **GET** /leads/applications/{appId}/mappings | Get a list of available application field mappings *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdDelete** | **DELETE** /leads/applications/{appId}/mappings/{mapId} | Delete an application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdGet** | **GET** /leads/applications/{appId}/mappings/{mapId} | Get a application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdPatch** | **PATCH** /leads/applications/{appId}/mappings/{mapId} | Update an application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsPost** | **POST** /leads/applications/{appId}/mappings | Create a new application field mapping *LeadsApi* | **leadsApplicationsGet** | **GET** /leads/applications | Get a list of available applications *LeadsApi* | **leadsCampaignsGet** | **GET** /leads/campaigns | Get a list of available campaigns *LeadsApi* | **leadsDynamicFieldsSchemaGet** | **GET** /leads/dynamic-fields-schema | Get a schema of lead fields *LeadsApi* | **leadsEmailsTemplatesGet** | **GET** /leads/emails/templates | Get list of email templates *LeadsApi* | **leadsFieldsFieldIdGet** | **GET** /leads/fields/{fieldId} | Get a lead field *LeadsApi* | **leadsFieldsFieldIdOrderPatch** | **PATCH** /leads/fields/{fieldId}/order | Update a lead field order position *LeadsApi* | **leadsFieldsFieldIdPatch** | **PATCH** /leads/fields/{fieldId} | Update a lead field *LeadsApi* | **leadsFieldsGet** | **GET** /leads/fields | Get a list of available lead fields *LeadsApi* | **leadsFieldsPost** | **POST** /leads/fields | Create a new lead field *LeadsApi* | **leadsFieldsTabsGet** | **GET** /leads/fields/tabs | Get a list of all lead field tabs *LeadsApi* | **leadsFieldsTabsPost** | **POST** /leads/fields/tabs | Create a lead field tab *LeadsApi* | **leadsFieldsTabsTabIdGet** | **GET** /leads/fields/tabs/{tabId} | Get a lead field tab *LeadsApi* | **leadsFieldsTabsTabIdPatch** | **PATCH** /leads/fields/tabs/{tabId} | Update a lead field tab *LeadsApi* | **leadsGet** | **GET** /leads | Get a list of leads *LeadsApi* | **leadsGroupsGet** | **GET** /leads/groups | Get a list of available groups *LeadsApi* | **leadsLeadIdActivityCampaignGet** | **GET** /leads/{leadId}/activity/campaign | Get a list of all lead campaign activity *LeadsApi* | **leadsLeadIdActivityDeletionGet** | **GET** /leads/{leadId}/activity/deletion | Get a list of all lead deletion activity *LeadsApi* | **leadsLeadIdActivityDuplicatesGet** | **GET** /leads/{leadId}/activity/duplicates | Get a list of all lead duplicate activity *LeadsApi* | **leadsLeadIdActivityLinksGet** | **GET** /leads/{leadId}/activity/links | Get a list of all lead links activity *LeadsApi* | **leadsLeadIdActivitySourceGet** | **GET** /leads/{leadId}/activity/source | Get a list of all lead source activity *LeadsApi* | **leadsLeadIdActivityStatusGet** | **GET** /leads/{leadId}/activity/status | Get a list of all lead status activity *LeadsApi* | **leadsLeadIdApplicationsApplicationIdPopulatePost** | **POST** /leads/{leadId}/applications/{applicationId}/populate | Populate PDF Document *LeadsApi* | **leadsLeadIdAppointmentsGet** | **GET** /leads/{leadId}/appointments | Get lead appointments *LeadsApi* | **leadsLeadIdAppointmentsPost** | **POST** /leads/{leadId}/appointments | Create a lead appointment *LeadsApi* | **leadsLeadIdDocumentsDocumentIdGet** | **GET** /leads/{leadId}/documents/{documentId} | Download a document *LeadsApi* | **leadsLeadIdDocumentsGet** | **GET** /leads/{leadId}/documents | Get a list of available documents *LeadsApi* | **leadsLeadIdDocumentsPost** | **POST** /leads/{leadId}/documents | Upload a document *LeadsApi* | **leadsLeadIdEmailsTemplateIdPost** | **POST** /leads/{leadId}/emails/{templateId} | Send an email to lead with template *LeadsApi* | **leadsLeadIdGet** | **GET** /leads/{leadId} | Get detailed lead information *LeadsApi* | **leadsLeadIdMailboxEmailIdAttachmentAttachmentIdGet** | **GET** /leads/{leadId}/mailbox/{emailId}/attachment/{attachmentId} | Download a mailbox email attachment *LeadsApi* | **leadsLeadIdNotesGet** | **GET** /leads/{leadId}/notes | Get lead notes *LeadsApi* | **leadsLeadIdNotesPost** | **POST** /leads/{leadId}/notes | Create a lead note *LeadsApi* | **leadsLeadIdPatch** | **PATCH** /leads/{leadId} | Update a lead *LeadsApi* | **leadsLeadIdSignaturesApplicationIdGeneratePost** | **POST** /leads/{leadId}/signatures/{applicationId}/generate | Generate an e-signature document *LeadsApi* | **leadsLeadIdSignaturesApplicationIdSendPost** | **POST** /leads/{leadId}/signatures/{applicationId}/send | Send an e-signature document *LeadsApi* | **leadsLeadIdSignaturesGet** | **GET** /leads/{leadId}/signatures | Get a list of all lead e-signatures documents *LeadsApi* | **leadsLeadIdSmsTemplateIdPost** | **POST** /leads/{leadId}/sms/{templateId} | Send an sms to lead with selected sms template *LeadsApi* | **leadsLeadIdTasksGet** | **POST** /leads/{leadId}/tasks | Create a lead task *LeadsApi* | **leadsLeadIdUsersGet** | **GET** /leads/{leadId}/users | Get a list of assigned users *LeadsApi* | **leadsLeadIdUsersPost** | **POST** /leads/{leadId}/users | Assign a user *LeadsApi* | **leadsLeadIdUsersUserIdDelete** | **DELETE** /leads/{leadId}/users/{userId} | Unassign a user from a lead *LeadsApi* | **leadsPost** | **POST** /leads | Create a lead *LeadsApi* | **leadsSignaturesApplicationIdDownloadGet** | **GET** /leads/signatures/{applicationId}/download | Download an e-signature document *LeadsApi* | **leadsSourcesGet** | **GET** /leads/sources | Get a list of available sources *LeadsApi* | **leadsStatusesGet** | **GET** /leads/statuses | Get a list of available statuses *LeadsApi* | **leadsUsersGet** | **GET** /leads/users | Get a list of available users *MerchantsApi* | **merchantsGet** | **GET** /merchants | Get a list of merchants *MerchantsApi* | **merchantsMerchantNumberChargebacksGet** | **GET** /merchants/{merchantNumber}/chargebacks | Get a list of chargebacks *MerchantsApi* | **merchantsMerchantNumberGet** | **GET** /merchants/{merchantNumber} | Get detailed merchant information *MerchantsApi* | **merchantsMerchantNumberPatch** | **PATCH** /merchants/{merchantNumber} | Update an existing merchant *MerchantsApi* | **merchantsMerchantNumberRetrievalsGet** | **GET** /merchants/{merchantNumber}/retrievals | Get a list of retrievals *MerchantsApi* | **merchantsMerchantNumberStatementsGet** | **GET** /merchants/{merchantNumber}/statements | Get a list of statements *MerchantsApi* | **merchantsMerchantNumberStatementsStatementIdGet** | **GET** /merchants/{merchantNumber}/statements/{statementId} | Download a statement *MerchantsApi* | **merchantsMerchantNumberTransactionsGet** | **GET** /merchants/{merchantNumber}/transactions | Get a list of batches and transactions *SubscriptionsApi* | **subscriptionsGet** | **GET** /subscriptions | Return a list of subscriptions *SubscriptionsApi* | **subscriptionsPost** | **POST** /subscriptions | Create a subscription *SubscriptionsApi* | **subscriptionsSampleLeadCreatedGet** | **GET** /subscriptions/sample/lead.created | Data sample for the \\&quot;lead.created\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadDeletedGet** | **GET** /subscriptions/sample/lead.deleted | Data sample for the \\&quot;lead.deleted\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadDocumentUploadedGet** | **GET** /subscriptions/sample/lead.document.uploaded | Data sample for the \\&quot;lead.document.uploaded\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadEmailReceivedGet** | **GET** /subscriptions/sample/lead.email.received | Data sample for the \\&quot;lead.email.received\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadNoteAddedGet** | **GET** /subscriptions/sample/lead.note.added | Data sample for the \\&quot;lead.note.added\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadRestoredGet** | **GET** /subscriptions/sample/lead.restored | Data sample for the \\&quot;lead.restored\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadStatusUpdatedGet** | **GET** /subscriptions/sample/lead.status.updated | Data sample for the \\&quot;lead.status.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadUpdatedGet** | **GET** /subscriptions/sample/lead.updated | Data sample for the \\&quot;lead.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSubscriptionIdDelete** | **DELETE** /subscriptions/{subscriptionId} | Delete a subscription *SubscriptionsApi* | **subscriptionsSubscriptionIdGet** | **GET** /subscriptions/{subscriptionId} | Return a subscription by its id *SubscriptionsApi* | **subscriptionsSubscriptionIdPatch** | **PATCH** /subscriptions/{subscriptionId} | Update a subscription # Change Log   ### 1.1.0 (2019-07-23)   #### Created:   * Added an endpoint for getting SMS templates. **Link:** [#/paths/~1leads~1sms~1templates/get](https://iriscrm.com/api/#/paths/~1leads~1sms~1templates/get)   * Added new subscriptions for \"application.created\" event **Link:** [#/paths/~1subscriptions~1sample~1application.created/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1application.created/get)   * Added new subscriptions for \"application.updated\" event **Link:** [#/paths/~1subscriptions~1sample~1application.updated/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1application.updated/get)     #### Updated:   * Added a 'sic_code' property to merchants endpoint **Link:** [#/paths/~1merchants/get](https://iriscrm.com/api/#/paths/~1merchants/get)       ### 1.0.0 (2019-07-23)   #### Created:   * Improving a change log.
+ * # Introduction Welcome to IRIS’s API!  The API is organized around `REST`. All requests should be made over `SSL`.  All request and response bodies, including errors, are encoded in `JSON`. # Open API The Open API provides numerous functions to access or to update your CRM lead  and merchant  data using simple REST calls. ### You can use the Lead API to: - Get a list of leads with field data, notes, appointments, tasks, users and, documents - Get a list of available campaigns, groups, sources, and statuses - Create a new lead, lead note, task, or an appointment - Assign and un-assign users to a lead - Upload or download documents - Update field data, status, campaign, group, and source - Generate an e-signature application and get a list of available apps  ### You can use the Merchant API to: - Get daily merchant deposits and transactions - Get daily chargebacks and retrievals - Get monthly merchant PDF statements - Get a list of merchants by demographics such as processor or group - Get merchant demographic profile information using the merchant id - Make updates to merchant profiles in real-time  # Generate an API token When you send an API request, you will need to include an API token in your request in order to authenticate your account.  The tokens are generated in the CRM by each user individually, and each user may create one or more tokens.  To generate a new API Token, open your user settings page by clicking on your username in the top-right corner, and clicking on the ** Settings ** link or you can use the <a href=\"https://iriscrm.com/settings\">link</a>.  Then open the ** API Settings ** tab, click ** Create New API Token **, configure your token’s settings as needed, and click ** Add New Token **:  <img src='https://iriscrm.com/images/docs/mapi001.png'/>  Your new token will now be created and displayed in a popup window:  <img src='https://iriscrm.com/images/docs/mapi002.png'/>  Once the token is created, it will be shown in the list of available API Tokens where you can copy the token, update its settings, or delete it once it’s no longer needed:  <img src='https://iriscrm.com/images/docs/mapi003.png'/>  ** Note: ** The created tokens will inherit the user’s permissions to assigned merchants, leads, groups and processors. # Using the API Authentication to the API is performed via `X-API-KEY` header. Requests not properly authenticated will return a `401` error code.  `curl -X GET \"https://iriscrm.com/api/v1/leads\" -H \"accept: application/json\" -H \"X-API-KEY: [YOURKEY]\"`  Note that all requests should be made over `SSL`. All request and response bodies, including errors, are encoded in JSON.  The API returns standard HTTP success or error status codes. In case of errors, additional information about what went wrong will be encoded in the response as JSON.  By default, you can make `120` requests per minute. Check the returned HTTP headers of any API request to see your current rate limit status. # Using the Subscription API API Subscriptions are used to send information about an event to a URL and trigger an API call. This is more efficient than doing scheduled API calls.  To create a subscription, use the API Settings page or send a request using the instructions in the Subscriptions section below.  All you need to know is the events you want to be subscribed for and the url to which the updates need to be sent.  To create subscriptions using our GUI open tab ** API Settings ** at ** https://iriscrm.com/settings **:  <img src='https://iriscrm.com/images/docs/new-subscription.png'/> # Authentication Authenticate your account by including your secret key in API requests. Do not share your secret API keys in publicly accessible areas, client-side code, and so forth. Authentication to the API is performed via `X-API-KEY` header. Requests not properly authenticated will return a `401` error code. # Errors Our API returns standard `HTTP` success or error status codes. For errors, we will also include extra information about what went wrong encoded in the response as `JSON`. # Limiting You can make `120` requests per minute. If you will reach a limit you will get a `429: Too Many Attempts.` response from the server. Check the returned `HTTP` headers of any API request to see your current rate limit status. Headers description: * `X-RateLimit-Limit` tells you the max number of requests you're allowed to make within this application's time period * `X-RateLimit-Remaining` tells you how many requests you have left within this current time period * `Retry-After` tells you how many seconds to wait until you try again. (you'll only get `Retry-After` if you've hit the limit).   # PHP SDK  ### Installation and Usage  #### Availability  The IRIS CRM PHP SDK requires PHP version 5.5 or higher and the PHP cURL extension.  #### Composer  To install the bindings via [Composer](http://getcomposer.org/), please run:  ```bash  composer require iris-crm/php-sdk      ```   In your code, configure the environment and API credentials:  ```php require_once(__DIR__ . '/vendor/autoload.php');  use Swagger\\Client\\Configuration; use Swagger\\Client\\Api\\LeadsApi;  // Configure API key authorization $config = Configuration::getDefaultConfiguration() ->setApiKey('X-API-KEY', 'YOUR_API_KEY') ->setHost('https://iriscrm.com/api/v1/'); ``` Here’s an example of how to get a list of leads using an SDK. Swagger\\Client\\Api\\LeadsApi it's a SDK Class for Lead endpoints. ```php $apiInstance = new LeadsApi(null, $config);  $page        = 1; // int | Page number $sort_by     = \"created\"; // string | Sorting of leads by the field value $sort_dir    = \"asc\"; // string | Direction of sorting $group       = 2; // int | Filter leads by a group id $campaign    = 3; // int | Filter leads by a campaign id $source      = 4; // int | Filter leads by a source id $status      = 1; // int | Filter leads by a status id $category    = 1; // int | Filter leads by a status category id $user        = 12; // int | Filter leads by a user id $date_filter = \"created\"; // string | Filtering leads by a date range depends on this filter $start_date  = new \\DateTime(\"2018-10-20T19:20:30+01:00\"); // \\DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\\\TH:i:sP) $end_date    = new \\DateTime(\"2019-10-20T19:20:30+01:00\"); // \\DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\\\TH:i:sP) $email       = \"test@mail.com\"; // string | Filter leads by a email try {     $result = $apiInstance->leadsGet($page, $sort_by, $sort_dir, $group, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);     print_r($result); } catch (Exception $e) {     echo 'Exception when calling LeadsApi->leadsGet: ', $e->getMessage(), PHP_EOL; } ``` All parameters for leadsGet method is optional and can be skipped.  If you want skip some parameters - you need to set parameter to `null`  All available classes and methods you can get in \"API Endpoints\" section below. ### API Endpoints All URIs are relative to *https://iriscrm.com/api/v1*  Class | Method | HTTP Request | Description ------------ | ------------- | ------------- | ------------- *LeadsApi* | **leadsApplicationsAppIdMappingsGet** | **GET** /leads/applications/{appId}/mappings | Get a list of available application field mappings *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdDelete** | **DELETE** /leads/applications/{appId}/mappings/{mapId} | Delete an application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdGet** | **GET** /leads/applications/{appId}/mappings/{mapId} | Get a application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsMapIdPatch** | **PATCH** /leads/applications/{appId}/mappings/{mapId} | Update an application field mapping *LeadsApi* | **leadsApplicationsAppIdMappingsPost** | **POST** /leads/applications/{appId}/mappings | Create a new application field mapping *LeadsApi* | **leadsApplicationsGet** | **GET** /leads/applications | Get a list of available applications *LeadsApi* | **leadsCampaignsGet** | **GET** /leads/campaigns | Get a list of available campaigns *LeadsApi* | **leadsDynamicFieldsSchemaGet** | **GET** /leads/dynamic-fields-schema | Get a schema of lead fields *LeadsApi* | **leadsEmailsTemplatesGet** | **GET** /leads/emails/templates | Get list of email templates *LeadsApi* | **leadsFieldsFieldIdGet** | **GET** /leads/fields/{fieldId} | Get a lead field *LeadsApi* | **leadsFieldsFieldIdOrderPatch** | **PATCH** /leads/fields/{fieldId}/order | Update a lead field order position *LeadsApi* | **leadsFieldsFieldIdPatch** | **PATCH** /leads/fields/{fieldId} | Update a lead field *LeadsApi* | **leadsFieldsGet** | **GET** /leads/fields | Get a list of available lead fields *LeadsApi* | **leadsFieldsPost** | **POST** /leads/fields | Create a new lead field *LeadsApi* | **leadsFieldsTabsGet** | **GET** /leads/fields/tabs | Get a list of all lead field tabs *LeadsApi* | **leadsFieldsTabsPost** | **POST** /leads/fields/tabs | Create a lead field tab *LeadsApi* | **leadsFieldsTabsTabIdGet** | **GET** /leads/fields/tabs/{tabId} | Get a lead field tab *LeadsApi* | **leadsFieldsTabsTabIdPatch** | **PATCH** /leads/fields/tabs/{tabId} | Update a lead field tab *LeadsApi* | **leadsGet** | **GET** /leads | Get a list of leads *LeadsApi* | **leadsGroupsGet** | **GET** /leads/groups | Get a list of available groups *LeadsApi* | **leadsLeadIdActivityCampaignGet** | **GET** /leads/{leadId}/activity/campaign | Get a list of all lead campaign activity *LeadsApi* | **leadsLeadIdActivityDeletionGet** | **GET** /leads/{leadId}/activity/deletion | Get a list of all lead deletion activity *LeadsApi* | **leadsLeadIdActivityDuplicatesGet** | **GET** /leads/{leadId}/activity/duplicates | Get a list of all lead duplicate activity *LeadsApi* | **leadsLeadIdActivityLinksGet** | **GET** /leads/{leadId}/activity/links | Get a list of all lead links activity *LeadsApi* | **leadsLeadIdActivitySourceGet** | **GET** /leads/{leadId}/activity/source | Get a list of all lead source activity *LeadsApi* | **leadsLeadIdActivityStatusGet** | **GET** /leads/{leadId}/activity/status | Get a list of all lead status activity *LeadsApi* | **leadsLeadIdApplicationsApplicationIdPopulatePost** | **POST** /leads/{leadId}/applications/{applicationId}/populate | Populate PDF Document *LeadsApi* | **leadsLeadIdAppointmentsGet** | **GET** /leads/{leadId}/appointments | Get lead appointments *LeadsApi* | **leadsLeadIdAppointmentsPost** | **POST** /leads/{leadId}/appointments | Create a lead appointment *LeadsApi* | **leadsLeadIdDocumentsDocumentIdGet** | **GET** /leads/{leadId}/documents/{documentId} | Download a document *LeadsApi* | **leadsLeadIdDocumentsGet** | **GET** /leads/{leadId}/documents | Get a list of available documents *LeadsApi* | **leadsLeadIdDocumentsPost** | **POST** /leads/{leadId}/documents | Upload a document *LeadsApi* | **leadsLeadIdEmailsTemplateIdPost** | **POST** /leads/{leadId}/emails/{templateId} | Send an email to lead with template *LeadsApi* | **leadsLeadIdGet** | **GET** /leads/{leadId} | Get detailed lead information *LeadsApi* | **leadsLeadIdMailboxEmailIdAttachmentAttachmentIdGet** | **GET** /leads/{leadId}/mailbox/{emailId}/attachment/{attachmentId} | Download a mailbox email attachment *LeadsApi* | **leadsLeadIdNotesGet** | **GET** /leads/{leadId}/notes | Get lead notes *LeadsApi* | **leadsLeadIdNotesPost** | **POST** /leads/{leadId}/notes | Create a lead note *LeadsApi* | **leadsLeadIdPatch** | **PATCH** /leads/{leadId} | Update a lead *LeadsApi* | **leadsLeadIdSignaturesApplicationIdGeneratePost** | **POST** /leads/{leadId}/signatures/{applicationId}/generate | Generate an e-signature document *LeadsApi* | **leadsLeadIdSignaturesApplicationIdSendPost** | **POST** /leads/{leadId}/signatures/{applicationId}/send | Send an e-signature document *LeadsApi* | **leadsLeadIdSignaturesGet** | **GET** /leads/{leadId}/signatures | Get a list of all lead e-signatures documents *LeadsApi* | **leadsLeadIdSmsTemplateIdPost** | **POST** /leads/{leadId}/sms/{templateId} | Send an sms to lead with selected sms template *LeadsApi* | **leadsLeadIdTasksGet** | **POST** /leads/{leadId}/tasks | Create a lead task *LeadsApi* | **leadsLeadIdUsersGet** | **GET** /leads/{leadId}/users | Get a list of assigned users *LeadsApi* | **leadsLeadIdUsersPost** | **POST** /leads/{leadId}/users | Assign a user *LeadsApi* | **leadsLeadIdUsersUserIdDelete** | **DELETE** /leads/{leadId}/users/{userId} | Unassign a user from a lead *LeadsApi* | **leadsPost** | **POST** /leads | Create a lead *LeadsApi* | **leadsSignaturesApplicationIdDownloadGet** | **GET** /leads/signatures/{applicationId}/download | Download an e-signature document *LeadsApi* | **leadsSmsTemplatesGet** | **GET** /leads/sms/templates | Get list of sms templates *LeadsApi* | **leadsSourcesGet** | **GET** /leads/sources | Get a list of available sources *LeadsApi* | **leadsStatusesGet** | **GET** /leads/statuses | Get a list of available statuses *LeadsApi* | **leadsUsersGet** | **GET** /leads/users | Get a list of available users *MerchantsApi* | **merchantsGet** | **GET** /merchants | Get a list of merchants *MerchantsApi* | **merchantsMerchantNumberChargebacksGet** | **GET** /merchants/{merchantNumber}/chargebacks | Get a list of chargebacks *MerchantsApi* | **merchantsMerchantNumberGet** | **GET** /merchants/{merchantNumber} | Get detailed merchant information *MerchantsApi* | **merchantsMerchantNumberPatch** | **PATCH** /merchants/{merchantNumber} | Update an existing merchant *MerchantsApi* | **merchantsMerchantNumberRetrievalsGet** | **GET** /merchants/{merchantNumber}/retrievals | Get a list of retrievals *MerchantsApi* | **merchantsMerchantNumberStatementsGet** | **GET** /merchants/{merchantNumber}/statements | Get a list of statements *MerchantsApi* | **merchantsMerchantNumberStatementsStatementIdGet** | **GET** /merchants/{merchantNumber}/statements/{statementId} | Download a statement *MerchantsApi* | **merchantsMerchantNumberTransactionsGet** | **GET** /merchants/{merchantNumber}/transactions | Get a list of batches and transactions *SubscriptionsApi* | **subscriptionsGet** | **GET** /subscriptions | Return a list of subscriptions *SubscriptionsApi* | **subscriptionsPost** | **POST** /subscriptions | Create a subscription *SubscriptionsApi* | **subscriptionsSampleApiUpdatedGet** | **GET** /subscriptions/sample/api.updated | Data sample for the \\&quot;api.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSampleApplicationCreatedGet** | **GET** /subscriptions/sample/turboapp.submitted | Data sample for the \\&quot;turboapp.submitted\\&quot; event *SubscriptionsApi* | **subscriptionsSampleApplicationUpdatedGet** | **GET** /subscriptions/sample/turboapp.updated | Data sample for the \\&quot;turboapp.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadCreatedGet** | **GET** /subscriptions/sample/lead.created | Data sample for the \\&quot;lead.created\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadDeletedGet** | **GET** /subscriptions/sample/lead.deleted | Data sample for the \\&quot;lead.deleted\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadDocumentUploadedGet** | **GET** /subscriptions/sample/lead.document.uploaded | Data sample for the \\&quot;lead.document.uploaded\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadEmailReceivedGet** | **GET** /subscriptions/sample/lead.email.received | Data sample for the \\&quot;lead.email.received\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadNoteAddedGet** | **GET** /subscriptions/sample/lead.note.added | Data sample for the \\&quot;lead.note.added\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadRestoredGet** | **GET** /subscriptions/sample/lead.restored | Data sample for the \\&quot;lead.restored\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadStatusUpdatedGet** | **GET** /subscriptions/sample/lead.status.updated | Data sample for the \\&quot;lead.status.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSampleLeadUpdatedGet** | **GET** /subscriptions/sample/lead.updated | Data sample for the \\&quot;lead.updated\\&quot; event *SubscriptionsApi* | **subscriptionsSubscriptionIdDelete** | **DELETE** /subscriptions/{subscriptionId} | Delete a subscription *SubscriptionsApi* | **subscriptionsSubscriptionIdGet** | **GET** /subscriptions/{subscriptionId} | Return a subscription by its id *SubscriptionsApi* | **subscriptionsSubscriptionIdPatch** | **PATCH** /subscriptions/{subscriptionId} | Update a subscription # Change Log   ### 1.3.1 (2019-10-25)   #### Updated:   * Rename subscriptions from \"application.created\" to \"turboapp.submitted\" and \"application.updated\" to \"turboapp.updated\". **Link:** [#/paths/~1subscriptions~1sample~1turboapp.submitted/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1turboapp.submitted/get)     #### Created:   * Added new subscriptions for \"turboapp.approved\" event. **Link:** [#/paths/~1subscriptions~1sample~1turboapp.approved/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1turboapp.approved/get)   * Added new subscriptions for \"turboapp.rejected\" event. **Link:** [#/paths/~1subscriptions~1sample~1turboapp.rejected/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1turboapp.rejected/get)       ### 1.3.0 (2019-10-25)   #### Updated:   * Added a `group` parameter to 'lead statuses' endpoint. **Link:** [#/paths/~1leads~1statuses/get](https://iriscrm.com/api/#/paths/~1leads~1statuses/get)   * Added a `status` parameter to 'lead groups' endpoint. **Link:** [#/paths/~1leads~1groups/get](https://iriscrm.com/api/#/paths/~1leads~1groups/get)       ### 1.2.2 (2019-10-25)   #### Updated:   * Added a `per_page` property to all list endpoints.       ### 1.2.1 (2019-10-25)   #### Updated:   * Added a `leads` property to merchants endpoint. **Link:** [#/paths/~1merchants/get](https://iriscrm.com/api/#/paths/~1merchants/get)       ### 1.2.0 (2019-10-23)   #### Updated:   * The endpoint for creating API subscriptions has been updated. Status based options have been added to some events. **Link:** [#/paths/~1subscriptions/post](https://iriscrm.com/api/#/paths/~1subscriptions/post)   * The endpoint for updating API subscriptions has been updated. Status based options have been added to some events. **Link:** [#/paths/~1subscriptions~1{subscriptionId}/patch](https://iriscrm.com/api/#/paths/~1subscriptions~1{subscriptionId}/patch)       ### 1.1.0 (2019-10-23)   #### Created:   * Added an endpoint for getting SMS templates. **Link:** [#/paths/~1leads~1sms~1templates/get](https://iriscrm.com/api/#/paths/~1leads~1sms~1templates/get)   * Added new subscriptions for \"application.created\" event. **Link:** [#/paths/~1subscriptions~1sample~1application.created/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1application.created/get)   * Added new subscriptions for \"application.updated\" event. **Link:** [#/paths/~1subscriptions~1sample~1application.updated/get](https://iriscrm.com/api/#/paths/~1subscriptions~1sample~1application.updated/get)     #### Updated:   * Added a 'sic_code' property to merchants endpoint. **Link:** [#/paths/~1merchants/get](https://iriscrm.com/api/#/paths/~1merchants/get)       ### 1.0.0 (2019-10-23)   #### Created:   * Improving a change log.
  *
- * OpenAPI spec version: 1.0.0
+ * OpenAPI spec version: 1.3.1
  * Contact: support@iriscrm.com
  * Generated by: https://github.com/swagger-api/swagger-codegen.git
- * Swagger Codegen version: 3.0.10
+ * Swagger Codegen version: 3.0.13
  */
 /**
  * NOTE: This class is auto generated by the swagger code generator program.
@@ -92,14 +92,16 @@ class LeadsApi
      * Get a list of available application field mappings
      *
      * @param  int $app_id Application Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20038
      */
-    public function leadsApplicationsAppIdMappingsGet($app_id)
+    public function leadsApplicationsAppIdMappingsGet($app_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsApplicationsAppIdMappingsGetWithHttpInfo($app_id);
+        list($response) = $this->leadsApplicationsAppIdMappingsGetWithHttpInfo($app_id, $page, $per_page);
         return $response;
     }
 
@@ -109,15 +111,17 @@ class LeadsApi
      * Get a list of available application field mappings
      *
      * @param  int $app_id Application Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20038, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsApplicationsAppIdMappingsGetWithHttpInfo($app_id)
+    public function leadsApplicationsAppIdMappingsGetWithHttpInfo($app_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20038';
-        $request = $this->leadsApplicationsAppIdMappingsGetRequest($app_id);
+        $request = $this->leadsApplicationsAppIdMappingsGetRequest($app_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -208,13 +212,15 @@ class LeadsApi
      * Get a list of available application field mappings
      *
      * @param  int $app_id Application Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsApplicationsAppIdMappingsGetAsync($app_id)
+    public function leadsApplicationsAppIdMappingsGetAsync($app_id, $page = null, $per_page = null)
     {
-        return $this->leadsApplicationsAppIdMappingsGetAsyncWithHttpInfo($app_id)
+        return $this->leadsApplicationsAppIdMappingsGetAsyncWithHttpInfo($app_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -228,14 +234,16 @@ class LeadsApi
      * Get a list of available application field mappings
      *
      * @param  int $app_id Application Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsApplicationsAppIdMappingsGetAsyncWithHttpInfo($app_id)
+    public function leadsApplicationsAppIdMappingsGetAsyncWithHttpInfo($app_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20038';
-        $request = $this->leadsApplicationsAppIdMappingsGetRequest($app_id);
+        $request = $this->leadsApplicationsAppIdMappingsGetRequest($app_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -278,11 +286,13 @@ class LeadsApi
      * Create request for operation 'leadsApplicationsAppIdMappingsGet'
      *
      * @param  int $app_id Application Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsApplicationsAppIdMappingsGetRequest($app_id)
+    protected function leadsApplicationsAppIdMappingsGetRequest($app_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -298,6 +308,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($app_id !== null) {
@@ -3356,14 +3374,16 @@ class LeadsApi
      *
      * Get a list of available lead fields
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20011
      */
-    public function leadsFieldsGet()
+    public function leadsFieldsGet($page = null, $per_page = null)
     {
-        list($response) = $this->leadsFieldsGetWithHttpInfo();
+        list($response) = $this->leadsFieldsGetWithHttpInfo($page, $per_page);
         return $response;
     }
 
@@ -3372,15 +3392,17 @@ class LeadsApi
      *
      * Get a list of available lead fields
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsFieldsGetWithHttpInfo()
+    public function leadsFieldsGetWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20011';
-        $request = $this->leadsFieldsGetRequest();
+        $request = $this->leadsFieldsGetRequest($page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3470,13 +3492,15 @@ class LeadsApi
      *
      * Get a list of available lead fields
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsFieldsGetAsync()
+    public function leadsFieldsGetAsync($page = null, $per_page = null)
     {
-        return $this->leadsFieldsGetAsyncWithHttpInfo()
+        return $this->leadsFieldsGetAsyncWithHttpInfo($page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3489,14 +3513,16 @@ class LeadsApi
      *
      * Get a list of available lead fields
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsFieldsGetAsyncWithHttpInfo()
+    public function leadsFieldsGetAsyncWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20011';
-        $request = $this->leadsFieldsGetRequest();
+        $request = $this->leadsFieldsGetRequest($page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3538,11 +3564,13 @@ class LeadsApi
     /**
      * Create request for operation 'leadsFieldsGet'
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsFieldsGetRequest()
+    protected function leadsFieldsGetRequest($page = null, $per_page = null)
     {
 
         $resourcePath = '/leads/fields';
@@ -3552,6 +3580,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
 
         // body params
@@ -3916,14 +3952,16 @@ class LeadsApi
      *
      * Get a list of all lead field tabs
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20013
      */
-    public function leadsFieldsTabsGet()
+    public function leadsFieldsTabsGet($page = null, $per_page = null)
     {
-        list($response) = $this->leadsFieldsTabsGetWithHttpInfo();
+        list($response) = $this->leadsFieldsTabsGetWithHttpInfo($page, $per_page);
         return $response;
     }
 
@@ -3932,15 +3970,17 @@ class LeadsApi
      *
      * Get a list of all lead field tabs
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsFieldsTabsGetWithHttpInfo()
+    public function leadsFieldsTabsGetWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20013';
-        $request = $this->leadsFieldsTabsGetRequest();
+        $request = $this->leadsFieldsTabsGetRequest($page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4030,13 +4070,15 @@ class LeadsApi
      *
      * Get a list of all lead field tabs
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsFieldsTabsGetAsync()
+    public function leadsFieldsTabsGetAsync($page = null, $per_page = null)
     {
-        return $this->leadsFieldsTabsGetAsyncWithHttpInfo()
+        return $this->leadsFieldsTabsGetAsyncWithHttpInfo($page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4049,14 +4091,16 @@ class LeadsApi
      *
      * Get a list of all lead field tabs
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsFieldsTabsGetAsyncWithHttpInfo()
+    public function leadsFieldsTabsGetAsyncWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20013';
-        $request = $this->leadsFieldsTabsGetRequest();
+        $request = $this->leadsFieldsTabsGetRequest($page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4098,11 +4142,13 @@ class LeadsApi
     /**
      * Create request for operation 'leadsFieldsTabsGet'
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsFieldsTabsGetRequest()
+    protected function leadsFieldsTabsGetRequest($page = null, $per_page = null)
     {
 
         $resourcePath = '/leads/fields/tabs';
@@ -4112,6 +4158,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
 
         // body params
@@ -5075,6 +5129,7 @@ class LeadsApi
      * Get a list of leads
      *
      * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      * @param  string $sort_by Sorting of leads by the field value (optional)
      * @param  string $sort_dir Direction of sorting (optional)
      * @param  int $group Filter leads by a group id (optional)
@@ -5093,9 +5148,9 @@ class LeadsApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse2007
      */
-    public function leadsGet($page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
+    public function leadsGet($page = null, $per_page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
     {
-        list($response) = $this->leadsGetWithHttpInfo($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
+        list($response) = $this->leadsGetWithHttpInfo($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
         return $response;
     }
 
@@ -5105,6 +5160,7 @@ class LeadsApi
      * Get a list of leads
      *
      * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      * @param  string $sort_by Sorting of leads by the field value (optional)
      * @param  string $sort_dir Direction of sorting (optional)
      * @param  int $group Filter leads by a group id (optional)
@@ -5123,10 +5179,10 @@ class LeadsApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsGetWithHttpInfo($page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
+    public function leadsGetWithHttpInfo($page = null, $per_page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2007';
-        $request = $this->leadsGetRequest($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
+        $request = $this->leadsGetRequest($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5217,6 +5273,7 @@ class LeadsApi
      * Get a list of leads
      *
      * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      * @param  string $sort_by Sorting of leads by the field value (optional)
      * @param  string $sort_dir Direction of sorting (optional)
      * @param  int $group Filter leads by a group id (optional)
@@ -5234,9 +5291,9 @@ class LeadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsGetAsync($page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
+    public function leadsGetAsync($page = null, $per_page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
     {
-        return $this->leadsGetAsyncWithHttpInfo($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
+        return $this->leadsGetAsyncWithHttpInfo($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5250,6 +5307,7 @@ class LeadsApi
      * Get a list of leads
      *
      * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      * @param  string $sort_by Sorting of leads by the field value (optional)
      * @param  string $sort_dir Direction of sorting (optional)
      * @param  int $group Filter leads by a group id (optional)
@@ -5267,10 +5325,10 @@ class LeadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsGetAsyncWithHttpInfo($page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
+    public function leadsGetAsyncWithHttpInfo($page = null, $per_page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2007';
-        $request = $this->leadsGetRequest($page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
+        $request = $this->leadsGetRequest($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5313,6 +5371,7 @@ class LeadsApi
      * Create request for operation 'leadsGet'
      *
      * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      * @param  string $sort_by Sorting of leads by the field value (optional)
      * @param  string $sort_dir Direction of sorting (optional)
      * @param  int $group Filter leads by a group id (optional)
@@ -5330,7 +5389,7 @@ class LeadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsGetRequest($page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
+    protected function leadsGetRequest($page = null, $per_page = null, $sort_by = null, $sort_dir = null, $group = null, $mid = null, $campaign = null, $source = null, $status = null, $category = null, $user = null, $date_filter = null, $start_date = null, $end_date = null, $email = null)
     {
 
         $resourcePath = '/leads';
@@ -5343,6 +5402,10 @@ class LeadsApi
         // query params
         if ($page !== null) {
             $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
         }
         // query params
         if ($sort_by !== null) {
@@ -5472,14 +5535,15 @@ class LeadsApi
      *
      * Get a list of available groups
      *
+     * @param  int $status Status Id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20041
      */
-    public function leadsGroupsGet()
+    public function leadsGroupsGet($status = null)
     {
-        list($response) = $this->leadsGroupsGetWithHttpInfo();
+        list($response) = $this->leadsGroupsGetWithHttpInfo($status);
         return $response;
     }
 
@@ -5488,15 +5552,16 @@ class LeadsApi
      *
      * Get a list of available groups
      *
+     * @param  int $status Status Id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20041, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsGroupsGetWithHttpInfo()
+    public function leadsGroupsGetWithHttpInfo($status = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20041';
-        $request = $this->leadsGroupsGetRequest();
+        $request = $this->leadsGroupsGetRequest($status);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5578,13 +5643,14 @@ class LeadsApi
      *
      * Get a list of available groups
      *
+     * @param  int $status Status Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsGroupsGetAsync()
+    public function leadsGroupsGetAsync($status = null)
     {
-        return $this->leadsGroupsGetAsyncWithHttpInfo()
+        return $this->leadsGroupsGetAsyncWithHttpInfo($status)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5597,14 +5663,15 @@ class LeadsApi
      *
      * Get a list of available groups
      *
+     * @param  int $status Status Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsGroupsGetAsyncWithHttpInfo()
+    public function leadsGroupsGetAsyncWithHttpInfo($status = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20041';
-        $request = $this->leadsGroupsGetRequest();
+        $request = $this->leadsGroupsGetRequest($status);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5646,11 +5713,12 @@ class LeadsApi
     /**
      * Create request for operation 'leadsGroupsGet'
      *
+     * @param  int $status Status Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsGroupsGetRequest()
+    protected function leadsGroupsGetRequest($status = null)
     {
 
         $resourcePath = '/leads/groups';
@@ -5660,6 +5728,10 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($status !== null) {
+            $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+        }
 
 
         // body params
@@ -5737,14 +5809,16 @@ class LeadsApi
      * Get a list of all lead campaign activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20032
      */
-    public function leadsLeadIdActivityCampaignGet($lead_id)
+    public function leadsLeadIdActivityCampaignGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivityCampaignGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivityCampaignGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -5754,15 +5828,17 @@ class LeadsApi
      * Get a list of all lead campaign activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20032, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivityCampaignGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityCampaignGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20032';
-        $request = $this->leadsLeadIdActivityCampaignGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityCampaignGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5853,13 +5929,15 @@ class LeadsApi
      * Get a list of all lead campaign activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityCampaignGetAsync($lead_id)
+    public function leadsLeadIdActivityCampaignGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivityCampaignGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivityCampaignGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5873,14 +5951,16 @@ class LeadsApi
      * Get a list of all lead campaign activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityCampaignGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityCampaignGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20032';
-        $request = $this->leadsLeadIdActivityCampaignGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityCampaignGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5923,11 +6003,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivityCampaignGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivityCampaignGetRequest($lead_id)
+    protected function leadsLeadIdActivityCampaignGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -5943,6 +6025,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -6028,14 +6118,16 @@ class LeadsApi
      * Get a list of all lead deletion activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20033
      */
-    public function leadsLeadIdActivityDeletionGet($lead_id)
+    public function leadsLeadIdActivityDeletionGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivityDeletionGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivityDeletionGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -6045,15 +6137,17 @@ class LeadsApi
      * Get a list of all lead deletion activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20033, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivityDeletionGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityDeletionGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20033';
-        $request = $this->leadsLeadIdActivityDeletionGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityDeletionGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6144,13 +6238,15 @@ class LeadsApi
      * Get a list of all lead deletion activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityDeletionGetAsync($lead_id)
+    public function leadsLeadIdActivityDeletionGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivityDeletionGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivityDeletionGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6164,14 +6260,16 @@ class LeadsApi
      * Get a list of all lead deletion activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityDeletionGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityDeletionGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20033';
-        $request = $this->leadsLeadIdActivityDeletionGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityDeletionGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6214,11 +6312,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivityDeletionGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivityDeletionGetRequest($lead_id)
+    protected function leadsLeadIdActivityDeletionGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -6234,6 +6334,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -6319,14 +6427,16 @@ class LeadsApi
      * Get a list of all lead duplicate activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20034
      */
-    public function leadsLeadIdActivityDuplicatesGet($lead_id)
+    public function leadsLeadIdActivityDuplicatesGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivityDuplicatesGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivityDuplicatesGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -6336,15 +6446,17 @@ class LeadsApi
      * Get a list of all lead duplicate activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20034, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivityDuplicatesGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityDuplicatesGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20034';
-        $request = $this->leadsLeadIdActivityDuplicatesGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityDuplicatesGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6435,13 +6547,15 @@ class LeadsApi
      * Get a list of all lead duplicate activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityDuplicatesGetAsync($lead_id)
+    public function leadsLeadIdActivityDuplicatesGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivityDuplicatesGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivityDuplicatesGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6455,14 +6569,16 @@ class LeadsApi
      * Get a list of all lead duplicate activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityDuplicatesGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityDuplicatesGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20034';
-        $request = $this->leadsLeadIdActivityDuplicatesGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityDuplicatesGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6505,11 +6621,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivityDuplicatesGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivityDuplicatesGetRequest($lead_id)
+    protected function leadsLeadIdActivityDuplicatesGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -6525,6 +6643,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -6610,14 +6736,16 @@ class LeadsApi
      * Get a list of all lead links activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20035
      */
-    public function leadsLeadIdActivityLinksGet($lead_id)
+    public function leadsLeadIdActivityLinksGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivityLinksGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivityLinksGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -6627,15 +6755,17 @@ class LeadsApi
      * Get a list of all lead links activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20035, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivityLinksGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityLinksGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20035';
-        $request = $this->leadsLeadIdActivityLinksGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityLinksGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6726,13 +6856,15 @@ class LeadsApi
      * Get a list of all lead links activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityLinksGetAsync($lead_id)
+    public function leadsLeadIdActivityLinksGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivityLinksGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivityLinksGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6746,14 +6878,16 @@ class LeadsApi
      * Get a list of all lead links activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityLinksGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityLinksGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20035';
-        $request = $this->leadsLeadIdActivityLinksGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityLinksGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6796,11 +6930,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivityLinksGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivityLinksGetRequest($lead_id)
+    protected function leadsLeadIdActivityLinksGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -6816,6 +6952,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -6901,14 +7045,16 @@ class LeadsApi
      * Get a list of all lead source activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20036
      */
-    public function leadsLeadIdActivitySourceGet($lead_id)
+    public function leadsLeadIdActivitySourceGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivitySourceGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivitySourceGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -6918,15 +7064,17 @@ class LeadsApi
      * Get a list of all lead source activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20036, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivitySourceGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivitySourceGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20036';
-        $request = $this->leadsLeadIdActivitySourceGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivitySourceGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7017,13 +7165,15 @@ class LeadsApi
      * Get a list of all lead source activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivitySourceGetAsync($lead_id)
+    public function leadsLeadIdActivitySourceGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivitySourceGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivitySourceGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7037,14 +7187,16 @@ class LeadsApi
      * Get a list of all lead source activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivitySourceGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivitySourceGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20036';
-        $request = $this->leadsLeadIdActivitySourceGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivitySourceGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7087,11 +7239,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivitySourceGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivitySourceGetRequest($lead_id)
+    protected function leadsLeadIdActivitySourceGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -7107,6 +7261,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -7192,14 +7354,16 @@ class LeadsApi
      * Get a list of all lead status activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20037
      */
-    public function leadsLeadIdActivityStatusGet($lead_id)
+    public function leadsLeadIdActivityStatusGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdActivityStatusGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdActivityStatusGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -7209,15 +7373,17 @@ class LeadsApi
      * Get a list of all lead status activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20037, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdActivityStatusGetWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityStatusGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20037';
-        $request = $this->leadsLeadIdActivityStatusGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityStatusGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7308,13 +7474,15 @@ class LeadsApi
      * Get a list of all lead status activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityStatusGetAsync($lead_id)
+    public function leadsLeadIdActivityStatusGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdActivityStatusGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdActivityStatusGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7328,14 +7496,16 @@ class LeadsApi
      * Get a list of all lead status activity
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdActivityStatusGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdActivityStatusGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20037';
-        $request = $this->leadsLeadIdActivityStatusGetRequest($lead_id);
+        $request = $this->leadsLeadIdActivityStatusGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7378,11 +7548,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdActivityStatusGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdActivityStatusGetRequest($lead_id)
+    protected function leadsLeadIdActivityStatusGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -7398,6 +7570,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -7809,14 +7989,16 @@ class LeadsApi
      * Get lead appointments
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20016
      */
-    public function leadsLeadIdAppointmentsGet($lead_id)
+    public function leadsLeadIdAppointmentsGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdAppointmentsGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdAppointmentsGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -7826,15 +8008,17 @@ class LeadsApi
      * Get lead appointments
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdAppointmentsGetWithHttpInfo($lead_id)
+    public function leadsLeadIdAppointmentsGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20016';
-        $request = $this->leadsLeadIdAppointmentsGetRequest($lead_id);
+        $request = $this->leadsLeadIdAppointmentsGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7925,13 +8109,15 @@ class LeadsApi
      * Get lead appointments
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdAppointmentsGetAsync($lead_id)
+    public function leadsLeadIdAppointmentsGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdAppointmentsGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdAppointmentsGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7945,14 +8131,16 @@ class LeadsApi
      * Get lead appointments
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdAppointmentsGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdAppointmentsGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20016';
-        $request = $this->leadsLeadIdAppointmentsGetRequest($lead_id);
+        $request = $this->leadsLeadIdAppointmentsGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7995,11 +8183,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdAppointmentsGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdAppointmentsGetRequest($lead_id)
+    protected function leadsLeadIdAppointmentsGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -8015,6 +8205,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -8723,14 +8921,16 @@ class LeadsApi
      * Get a list of available documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20024
      */
-    public function leadsLeadIdDocumentsGet($lead_id)
+    public function leadsLeadIdDocumentsGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdDocumentsGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdDocumentsGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -8740,15 +8940,17 @@ class LeadsApi
      * Get a list of available documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdDocumentsGetWithHttpInfo($lead_id)
+    public function leadsLeadIdDocumentsGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20024';
-        $request = $this->leadsLeadIdDocumentsGetRequest($lead_id);
+        $request = $this->leadsLeadIdDocumentsGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8839,13 +9041,15 @@ class LeadsApi
      * Get a list of available documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdDocumentsGetAsync($lead_id)
+    public function leadsLeadIdDocumentsGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdDocumentsGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdDocumentsGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8859,14 +9063,16 @@ class LeadsApi
      * Get a list of available documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdDocumentsGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdDocumentsGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20024';
-        $request = $this->leadsLeadIdDocumentsGetRequest($lead_id);
+        $request = $this->leadsLeadIdDocumentsGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8909,11 +9115,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdDocumentsGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdDocumentsGetRequest($lead_id)
+    protected function leadsLeadIdDocumentsGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -8929,6 +9137,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -10312,14 +10528,16 @@ class LeadsApi
      * Get lead notes
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20014
      */
-    public function leadsLeadIdNotesGet($lead_id)
+    public function leadsLeadIdNotesGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdNotesGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdNotesGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -10329,15 +10547,17 @@ class LeadsApi
      * Get lead notes
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdNotesGetWithHttpInfo($lead_id)
+    public function leadsLeadIdNotesGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20014';
-        $request = $this->leadsLeadIdNotesGetRequest($lead_id);
+        $request = $this->leadsLeadIdNotesGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10428,13 +10648,15 @@ class LeadsApi
      * Get lead notes
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdNotesGetAsync($lead_id)
+    public function leadsLeadIdNotesGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdNotesGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdNotesGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10448,14 +10670,16 @@ class LeadsApi
      * Get lead notes
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdNotesGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdNotesGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20014';
-        $request = $this->leadsLeadIdNotesGetRequest($lead_id);
+        $request = $this->leadsLeadIdNotesGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10498,11 +10722,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdNotesGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdNotesGetRequest($lead_id)
+    protected function leadsLeadIdNotesGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -10518,6 +10744,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -11889,14 +12123,16 @@ class LeadsApi
      * Get a list of all lead e-signatures documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20026
      */
-    public function leadsLeadIdSignaturesGet($lead_id)
+    public function leadsLeadIdSignaturesGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdSignaturesGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdSignaturesGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -11906,15 +12142,17 @@ class LeadsApi
      * Get a list of all lead e-signatures documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdSignaturesGetWithHttpInfo($lead_id)
+    public function leadsLeadIdSignaturesGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20026';
-        $request = $this->leadsLeadIdSignaturesGetRequest($lead_id);
+        $request = $this->leadsLeadIdSignaturesGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11997,13 +12235,15 @@ class LeadsApi
      * Get a list of all lead e-signatures documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdSignaturesGetAsync($lead_id)
+    public function leadsLeadIdSignaturesGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdSignaturesGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdSignaturesGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12017,14 +12257,16 @@ class LeadsApi
      * Get a list of all lead e-signatures documents
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdSignaturesGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdSignaturesGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20026';
-        $request = $this->leadsLeadIdSignaturesGetRequest($lead_id);
+        $request = $this->leadsLeadIdSignaturesGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12067,11 +12309,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdSignaturesGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdSignaturesGetRequest($lead_id)
+    protected function leadsLeadIdSignaturesGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -12087,6 +12331,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -12498,14 +12750,16 @@ class LeadsApi
      * Get lead tasks
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20019
      */
-    public function leadsLeadIdTasksGet($lead_id)
+    public function leadsLeadIdTasksGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdTasksGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdTasksGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -12515,15 +12769,17 @@ class LeadsApi
      * Get lead tasks
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdTasksGetWithHttpInfo($lead_id)
+    public function leadsLeadIdTasksGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20019';
-        $request = $this->leadsLeadIdTasksGetRequest($lead_id);
+        $request = $this->leadsLeadIdTasksGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12614,13 +12870,15 @@ class LeadsApi
      * Get lead tasks
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdTasksGetAsync($lead_id)
+    public function leadsLeadIdTasksGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdTasksGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdTasksGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12634,14 +12892,16 @@ class LeadsApi
      * Get lead tasks
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdTasksGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdTasksGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20019';
-        $request = $this->leadsLeadIdTasksGetRequest($lead_id);
+        $request = $this->leadsLeadIdTasksGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12684,11 +12944,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdTasksGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdTasksGetRequest($lead_id)
+    protected function leadsLeadIdTasksGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -12704,6 +12966,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -13102,14 +13372,16 @@ class LeadsApi
      * Get a list of assigned users
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20021
      */
-    public function leadsLeadIdUsersGet($lead_id)
+    public function leadsLeadIdUsersGet($lead_id, $page = null, $per_page = null)
     {
-        list($response) = $this->leadsLeadIdUsersGetWithHttpInfo($lead_id);
+        list($response) = $this->leadsLeadIdUsersGetWithHttpInfo($lead_id, $page, $per_page);
         return $response;
     }
 
@@ -13119,15 +13391,17 @@ class LeadsApi
      * Get a list of assigned users
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsLeadIdUsersGetWithHttpInfo($lead_id)
+    public function leadsLeadIdUsersGetWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20021';
-        $request = $this->leadsLeadIdUsersGetRequest($lead_id);
+        $request = $this->leadsLeadIdUsersGetRequest($lead_id, $page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13218,13 +13492,15 @@ class LeadsApi
      * Get a list of assigned users
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdUsersGetAsync($lead_id)
+    public function leadsLeadIdUsersGetAsync($lead_id, $page = null, $per_page = null)
     {
-        return $this->leadsLeadIdUsersGetAsyncWithHttpInfo($lead_id)
+        return $this->leadsLeadIdUsersGetAsyncWithHttpInfo($lead_id, $page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13238,14 +13514,16 @@ class LeadsApi
      * Get a list of assigned users
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsLeadIdUsersGetAsyncWithHttpInfo($lead_id)
+    public function leadsLeadIdUsersGetAsyncWithHttpInfo($lead_id, $page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20021';
-        $request = $this->leadsLeadIdUsersGetRequest($lead_id);
+        $request = $this->leadsLeadIdUsersGetRequest($lead_id, $page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13288,11 +13566,13 @@ class LeadsApi
      * Create request for operation 'leadsLeadIdUsersGet'
      *
      * @param  int $lead_id Lead Id (required)
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsLeadIdUsersGetRequest($lead_id)
+    protected function leadsLeadIdUsersGetRequest($lead_id, $page = null, $per_page = null)
     {
         // verify the required parameter 'lead_id' is set
         if ($lead_id === null || (is_array($lead_id) && count($lead_id) === 0)) {
@@ -13308,6 +13588,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
         // path params
         if ($lead_id !== null) {
@@ -15160,14 +15448,15 @@ class LeadsApi
      *
      * Get a list of available statuses
      *
+     * @param  int $group Group Id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20043
      */
-    public function leadsStatusesGet()
+    public function leadsStatusesGet($group = null)
     {
-        list($response) = $this->leadsStatusesGetWithHttpInfo();
+        list($response) = $this->leadsStatusesGetWithHttpInfo($group);
         return $response;
     }
 
@@ -15176,15 +15465,16 @@ class LeadsApi
      *
      * Get a list of available statuses
      *
+     * @param  int $group Group Id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20043, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsStatusesGetWithHttpInfo()
+    public function leadsStatusesGetWithHttpInfo($group = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20043';
-        $request = $this->leadsStatusesGetRequest();
+        $request = $this->leadsStatusesGetRequest($group);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15266,13 +15556,14 @@ class LeadsApi
      *
      * Get a list of available statuses
      *
+     * @param  int $group Group Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsStatusesGetAsync()
+    public function leadsStatusesGetAsync($group = null)
     {
-        return $this->leadsStatusesGetAsyncWithHttpInfo()
+        return $this->leadsStatusesGetAsyncWithHttpInfo($group)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15285,14 +15576,15 @@ class LeadsApi
      *
      * Get a list of available statuses
      *
+     * @param  int $group Group Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsStatusesGetAsyncWithHttpInfo()
+    public function leadsStatusesGetAsyncWithHttpInfo($group = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20043';
-        $request = $this->leadsStatusesGetRequest();
+        $request = $this->leadsStatusesGetRequest($group);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15334,11 +15626,12 @@ class LeadsApi
     /**
      * Create request for operation 'leadsStatusesGet'
      *
+     * @param  int $group Group Id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsStatusesGetRequest()
+    protected function leadsStatusesGetRequest($group = null)
     {
 
         $resourcePath = '/leads/statuses';
@@ -15348,6 +15641,10 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($group !== null) {
+            $queryParams['group'] = ObjectSerializer::toQueryValue($group);
+        }
 
 
         // body params
@@ -15424,14 +15721,16 @@ class LeadsApi
      *
      * Get a list of available users
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse20021
      */
-    public function leadsUsersGet()
+    public function leadsUsersGet($page = null, $per_page = null)
     {
-        list($response) = $this->leadsUsersGetWithHttpInfo();
+        list($response) = $this->leadsUsersGetWithHttpInfo($page, $per_page);
         return $response;
     }
 
@@ -15440,15 +15739,17 @@ class LeadsApi
      *
      * Get a list of available users
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
      */
-    public function leadsUsersGetWithHttpInfo()
+    public function leadsUsersGetWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20021';
-        $request = $this->leadsUsersGetRequest();
+        $request = $this->leadsUsersGetRequest($page, $per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15530,13 +15831,15 @@ class LeadsApi
      *
      * Get a list of available users
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsUsersGetAsync()
+    public function leadsUsersGetAsync($page = null, $per_page = null)
     {
-        return $this->leadsUsersGetAsyncWithHttpInfo()
+        return $this->leadsUsersGetAsyncWithHttpInfo($page, $per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15549,14 +15852,16 @@ class LeadsApi
      *
      * Get a list of available users
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function leadsUsersGetAsyncWithHttpInfo()
+    public function leadsUsersGetAsyncWithHttpInfo($page = null, $per_page = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse20021';
-        $request = $this->leadsUsersGetRequest();
+        $request = $this->leadsUsersGetRequest($page, $per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15598,11 +15903,13 @@ class LeadsApi
     /**
      * Create request for operation 'leadsUsersGet'
      *
+     * @param  int $page Page number (optional)
+     * @param  int $per_page Count of records per page (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function leadsUsersGetRequest()
+    protected function leadsUsersGetRequest($page = null, $per_page = null)
     {
 
         $resourcePath = '/leads/users';
@@ -15612,6 +15919,14 @@ class LeadsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($per_page !== null) {
+            $queryParams['per_page'] = ObjectSerializer::toQueryValue($per_page);
+        }
 
 
         // body params
