@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **string** |  | [optional] 
+**data** | [**\Swagger\Client\Model\LeadFieldTab[]**](LeadFieldTab.md) |  | [optional] 
+**links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
+**meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

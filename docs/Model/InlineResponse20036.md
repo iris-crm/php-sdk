@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\SourceActivity[]**](SourceActivity.md) |  | [optional] 
+**data** | [**\Swagger\Client\Model\InlineResponse20036Data[]**](InlineResponse20036Data.md) |  | [optional] 
 **links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
 **meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 

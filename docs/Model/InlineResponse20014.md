@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\InlineResponse20014Data[]**](InlineResponse20014Data.md) |  | [optional] 
+**data** | [**\Swagger\Client\Model\BriefLeadInfo[]**](BriefLeadInfo.md) |  | [optional] 
 **links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
 **meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 

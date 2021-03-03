@@ -1,17 +1,11 @@
 # Swagger\Client\LeadsApi
 
-All URIs are relative to *https://iriscrm.com/api/v1*
+All URIs are relative to */api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**leadsApplicationsAppIdMappingsGet**](LeadsApi.md#leadsapplicationsappidmappingsget) | **GET** /leads/applications/{appId}/mappings | Get a list of available application field mappings
-[**leadsApplicationsAppIdMappingsMapIdDelete**](LeadsApi.md#leadsapplicationsappidmappingsmapiddelete) | **DELETE** /leads/applications/{appId}/mappings/{mapId} | Delete an application field mapping
-[**leadsApplicationsAppIdMappingsMapIdGet**](LeadsApi.md#leadsapplicationsappidmappingsmapidget) | **GET** /leads/applications/{appId}/mappings/{mapId} | Get a application field mapping
-[**leadsApplicationsAppIdMappingsMapIdPatch**](LeadsApi.md#leadsapplicationsappidmappingsmapidpatch) | **PATCH** /leads/applications/{appId}/mappings/{mapId} | Update an application field mapping
-[**leadsApplicationsAppIdMappingsPost**](LeadsApi.md#leadsapplicationsappidmappingspost) | **POST** /leads/applications/{appId}/mappings | Create a new application field mapping
-[**leadsApplicationsGet**](LeadsApi.md#leadsapplicationsget) | **GET** /leads/applications | Get a list of available applications
 [**leadsCampaignsGet**](LeadsApi.md#leadscampaignsget) | **GET** /leads/campaigns | Get a list of available campaigns
-[**leadsEmailsTemplatesGet**](LeadsApi.md#leadsemailstemplatesget) | **GET** /leads/emails/templates | Get list of email templates
+[**leadsEmailsTemplatesGet**](LeadsApi.md#leadsemailstemplatesget) | **GET** /leads/emails/templates | Get a list of email templates
 [**leadsFieldsFieldIdGet**](LeadsApi.md#leadsfieldsfieldidget) | **GET** /leads/fields/{fieldId} | Get a lead field
 [**leadsFieldsFieldIdOrderPatch**](LeadsApi.md#leadsfieldsfieldidorderpatch) | **PATCH** /leads/fields/{fieldId}/order | Update a lead field order position
 [**leadsFieldsFieldIdPatch**](LeadsApi.md#leadsfieldsfieldidpatch) | **PATCH** /leads/fields/{fieldId} | Update a lead field
@@ -21,6 +15,7 @@ Method | HTTP request | Description
 [**leadsFieldsTabsPost**](LeadsApi.md#leadsfieldstabspost) | **POST** /leads/fields/tabs | Create a lead field tab
 [**leadsFieldsTabsTabIdGet**](LeadsApi.md#leadsfieldstabstabidget) | **GET** /leads/fields/tabs/{tabId} | Get a lead field tab
 [**leadsFieldsTabsTabIdPatch**](LeadsApi.md#leadsfieldstabstabidpatch) | **PATCH** /leads/fields/tabs/{tabId} | Update a lead field tab
+[**leadsFileLabelsGet**](LeadsApi.md#leadsfilelabelsget) | **GET** /leads/file_labels | Get a list of available document labels
 [**leadsGet**](LeadsApi.md#leadsget) | **GET** /leads | Get a list of leads
 [**leadsGroupsGet**](LeadsApi.md#leadsgroupsget) | **GET** /leads/groups | Get a list of available groups
 [**leadsLeadIdActivityCampaignGet**](LeadsApi.md#leadsleadidactivitycampaignget) | **GET** /leads/{leadId}/activity/campaign | Get a list of all lead campaign activity
@@ -41,358 +36,21 @@ Method | HTTP request | Description
 [**leadsLeadIdNotesGet**](LeadsApi.md#leadsleadidnotesget) | **GET** /leads/{leadId}/notes | Get lead notes
 [**leadsLeadIdNotesPost**](LeadsApi.md#leadsleadidnotespost) | **POST** /leads/{leadId}/notes | Create a lead note
 [**leadsLeadIdPatch**](LeadsApi.md#leadsleadidpatch) | **PATCH** /leads/{leadId} | Update a lead
-[**leadsLeadIdSignaturesApplicationIdGeneratePost**](LeadsApi.md#leadsleadidsignaturesapplicationidgeneratepost) | **POST** /leads/{leadId}/signatures/{applicationId}/generate | Generate an e-signature document
-[**leadsLeadIdSignaturesApplicationIdSendPost**](LeadsApi.md#leadsleadidsignaturesapplicationidsendpost) | **POST** /leads/{leadId}/signatures/{applicationId}/send | Send an e-signature document
-[**leadsLeadIdSignaturesGet**](LeadsApi.md#leadsleadidsignaturesget) | **GET** /leads/{leadId}/signatures | Get a list of all lead e-signatures documents
-[**leadsLeadIdSmsTemplateIdPost**](LeadsApi.md#leadsleadidsmstemplateidpost) | **POST** /leads/{leadId}/sms/{templateId} | Send an sms to lead with selected sms template
+[**leadsLeadIdSmsTemplateIdPost**](LeadsApi.md#leadsleadidsmstemplateidpost) | **POST** /leads/{leadId}/sms/{templateId} | Send an SMS to lead with selected SMS template
 [**leadsLeadIdTasksGet**](LeadsApi.md#leadsleadidtasksget) | **GET** /leads/{leadId}/tasks | Get lead tasks
 [**leadsLeadIdTasksPost**](LeadsApi.md#leadsleadidtaskspost) | **POST** /leads/{leadId}/tasks | Create a lead task
 [**leadsLeadIdUsersGet**](LeadsApi.md#leadsleadidusersget) | **GET** /leads/{leadId}/users | Get a list of assigned users
 [**leadsLeadIdUsersPost**](LeadsApi.md#leadsleadiduserspost) | **POST** /leads/{leadId}/users | Assign a user
 [**leadsLeadIdUsersUserIdDelete**](LeadsApi.md#leadsleadidusersuseriddelete) | **DELETE** /leads/{leadId}/users/{userId} | Unassign a user from a lead
 [**leadsPost**](LeadsApi.md#leadspost) | **POST** /leads | Create a lead
-[**leadsSignaturesApplicationIdDownloadGet**](LeadsApi.md#leadssignaturesapplicationiddownloadget) | **GET** /leads/signatures/{applicationId}/download | Download an e-signature document
-[**leadsSmsTemplatesGet**](LeadsApi.md#leadssmstemplatesget) | **GET** /leads/sms/templates | Get list of sms templates
+[**leadsPricingTemplatesGet**](LeadsApi.md#leadspricingtemplatesget) | **GET** /leads/pricing_templates | Get pricing templates
+[**leadsSmsTemplatesGet**](LeadsApi.md#leadssmstemplatesget) | **GET** /leads/sms/templates | Get list of SMS templates
 [**leadsSourcesGet**](LeadsApi.md#leadssourcesget) | **GET** /leads/sources | Get a list of available sources
 [**leadsStatusesGet**](LeadsApi.md#leadsstatusesget) | **GET** /leads/statuses | Get a list of available statuses
 [**leadsUsersGet**](LeadsApi.md#leadsusersget) | **GET** /leads/users | Get a list of available users
 
-# **leadsApplicationsAppIdMappingsGet**
-> \Swagger\Client\Model\InlineResponse20038 leadsApplicationsAppIdMappingsGet($app_id, $page, $per_page)
-
-Get a list of available application field mappings
-
-Get a list of available application field mappings
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$app_id = 56; // int | Application Id
-$page = 56; // int | Page number
-$per_page = 56; // int | Count of records per page
-
-try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsGet($app_id, $page, $per_page);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_id** | **int**| Application Id |
- **page** | **int**| Page number | [optional]
- **per_page** | **int**| Count of records per page | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsApplicationsAppIdMappingsMapIdDelete**
-> \Swagger\Client\Model\InlineResponse20039 leadsApplicationsAppIdMappingsMapIdDelete($app_id, $map_id)
-
-Delete an application field mapping
-
-Deletion of application field mapping
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$app_id = 56; // int | Application Id
-$map_id = 56; // int | Mapping Id
-
-try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsMapIdDelete($app_id, $map_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsMapIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_id** | **int**| Application Id |
- **map_id** | **int**| Mapping Id |
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsApplicationsAppIdMappingsMapIdGet**
-> \Swagger\Client\Model\ApplicationField leadsApplicationsAppIdMappingsMapIdGet($app_id, $map_id)
-
-Get a application field mapping
-
-Get a application field mapping
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$app_id = 56; // int | Application Id
-$map_id = 56; // int | Mapping Id
-
-try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsMapIdGet($app_id, $map_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsMapIdGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_id** | **int**| Application Id |
- **map_id** | **int**| Mapping Id |
-
-### Return type
-
-[**\Swagger\Client\Model\ApplicationField**](../Model/ApplicationField.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsApplicationsAppIdMappingsMapIdPatch**
-> \Swagger\Client\Model\ApplicationField leadsApplicationsAppIdMappingsMapIdPatch($app_id, $map_id, $body)
-
-Update an application field mapping
-
-Update an application field mapping
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$app_id = 56; // int | Application Id
-$map_id = 56; // int | Mapping Id
-$body = new \Swagger\Client\Model\ApplicationField(); // \Swagger\Client\Model\ApplicationField | 
-
-try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsMapIdPatch($app_id, $map_id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsMapIdPatch: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_id** | **int**| Application Id |
- **map_id** | **int**| Mapping Id |
- **body** | [**\Swagger\Client\Model\ApplicationField**](../Model/ApplicationField.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ApplicationField**](../Model/ApplicationField.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsApplicationsAppIdMappingsPost**
-> \Swagger\Client\Model\ApplicationField leadsApplicationsAppIdMappingsPost($app_id, $body)
-
-Create a new application field mapping
-
-Creation of new application field mapping
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$app_id = 56; // int | Application Id
-$body = new \Swagger\Client\Model\ApplicationField(); // \Swagger\Client\Model\ApplicationField | 
-
-try {
-    $result = $apiInstance->leadsApplicationsAppIdMappingsPost($app_id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsAppIdMappingsPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_id** | **int**| Application Id |
- **body** | [**\Swagger\Client\Model\ApplicationField**](../Model/ApplicationField.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\ApplicationField**](../Model/ApplicationField.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsApplicationsGet**
-> \Swagger\Client\Model\BriefApplicationInfo[] leadsApplicationsGet()
-
-Get a list of available applications
-
-Get a list of available applications
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->leadsApplicationsGet();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsApplicationsGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Swagger\Client\Model\BriefApplicationInfo[]**](../Model/BriefApplicationInfo.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **leadsCampaignsGet**
-> \Swagger\Client\Model\InlineResponse20040 leadsCampaignsGet()
+> \Swagger\Client\Model\InlineResponse20049 leadsCampaignsGet()
 
 Get a list of available campaigns
 
@@ -428,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
+[**\Swagger\Client\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
 
 ### Authorization
 
@@ -442,9 +100,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsEmailsTemplatesGet**
-> \Swagger\Client\Model\InlineResponse20029 leadsEmailsTemplatesGet()
+> \Swagger\Client\Model\InlineResponse20038 leadsEmailsTemplatesGet()
 
-Get list of email templates
+Get a list of email templates
 
 Get list of available email templates for a lead email
 
@@ -478,7 +136,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
 
 ### Authorization
 
@@ -546,7 +204,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsFieldIdOrderPatch**
-> \Swagger\Client\Model\InlineResponse20012 leadsFieldsFieldIdOrderPatch($field_id, $body)
+> \Swagger\Client\Model\InlineResponse20019 leadsFieldsFieldIdOrderPatch($field_id, $body)
 
 Update a lead field order position
 
@@ -588,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
 
 ### Authorization
 
@@ -624,7 +282,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     $config
 );
 $field_id = 56; // int | Field Id
-$body = new \Swagger\Client\Model\null(); //  | 
+$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
 
 try {
     $result = $apiInstance->leadsFieldsFieldIdPatch($field_id, $body);
@@ -640,7 +298,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **field_id** | **int**| Field Id |
- **body** | [****](../Model/.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body4**](../Model/Body4.md)|  | [optional]
 
 ### Return type
 
@@ -658,7 +316,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsGet**
-> \Swagger\Client\Model\InlineResponse20011 leadsFieldsGet($page, $per_page)
+> \Swagger\Client\Model\InlineResponse20018 leadsFieldsGet($page, $per_page)
 
 Get a list of available lead fields
 
@@ -700,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
 
 ### Authorization
 
@@ -735,7 +393,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\null(); //  | 
+$body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | 
 
 try {
     $result = $apiInstance->leadsFieldsPost($body);
@@ -750,7 +408,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [****](../Model/.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body3**](../Model/Body3.md)|  | [optional]
 
 ### Return type
 
@@ -768,7 +426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsFieldsTabsGet**
-> \Swagger\Client\Model\InlineResponse20013 leadsFieldsTabsGet($page, $per_page)
+> \Swagger\Client\Model\InlineResponse20020 leadsFieldsTabsGet($page, $per_page)
 
 Get a list of all lead field tabs
 
@@ -810,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
 
 ### Authorization
 
@@ -987,8 +645,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **leadsFileLabelsGet**
+> \Swagger\Client\Model\InlineResponse20033 leadsFileLabelsGet($page, $per_page)
+
+Get a list of available document labels
+
+Get a list of all document labels available when uploading and downloading files
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\LeadsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
+
+try {
+    $result = $apiInstance->leadsFileLabelsGet($page, $per_page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LeadsApi->leadsFileLabelsGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **leadsGet**
-> \Swagger\Client\Model\InlineResponse2007 leadsGet($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
+> \Swagger\Client\Model\InlineResponse20014 leadsGet($page, $per_page, $sort_by, $sort_dir, $group, $mid, $campaign, $source, $status, $category, $user, $date_filter, $start_date, $end_date, $email)
 
 Get a list of leads
 
@@ -1012,7 +726,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 $page = 56; // int | Page number
 $per_page = 56; // int | Count of records per page
 $sort_by = "sort_by_example"; // string | Sorting of leads by the field value
-$sort_dir = "sort_dir_example"; // string | Direction of sorting
+$sort_dir = "asc"; // string | Direction of sorting
 $group = 56; // int | Filter leads by a group id
 $mid = 56; // int | Filter leads by a merchant id
 $campaign = 56; // int | Filter leads by a campaign id
@@ -1021,8 +735,8 @@ $status = 56; // int | Filter leads by a status id
 $category = 56; // int | Filter leads by a status category id
 $user = 56; // int | Filter leads by a user id
 $date_filter = "date_filter_example"; // string | Filtering leads by a date range depends on this filter
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP)
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP)
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) (**Please note that `+` sign should be encoded to `%2B`**)
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) (**Please note that `+` sign should be encoded to `%2B`**)
 $email = "email_example"; // string | Filter leads by a email
 
 try {
@@ -1041,7 +755,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Page number | [optional]
  **per_page** | **int**| Count of records per page | [optional]
  **sort_by** | **string**| Sorting of leads by the field value | [optional]
- **sort_dir** | **string**| Direction of sorting | [optional]
+ **sort_dir** | **string**| Direction of sorting | [optional] [default to asc]
  **group** | **int**| Filter leads by a group id | [optional]
  **mid** | **int**| Filter leads by a merchant id | [optional]
  **campaign** | **int**| Filter leads by a campaign id | [optional]
@@ -1050,13 +764,13 @@ Name | Type | Description  | Notes
  **category** | **int**| Filter leads by a status category id | [optional]
  **user** | **int**| Filter leads by a user id | [optional]
  **date_filter** | **string**| Filtering leads by a date range depends on this filter | [optional]
- **start_date** | **\DateTime**| Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) | [optional]
- **end_date** | **\DateTime**| Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) | [optional]
+ **start_date** | **\DateTime**| Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) (**Please note that &#x60;+&#x60; sign should be encoded to &#x60;%2B&#x60;**) | [optional]
+ **end_date** | **\DateTime**| Filter leads by a date in ISO 8601 format (Y-m-d\\TH:i:sP) (**Please note that &#x60;+&#x60; sign should be encoded to &#x60;%2B&#x60;**) | [optional]
  **email** | **string**| Filter leads by a email | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
@@ -1070,7 +784,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsGroupsGet**
-> \Swagger\Client\Model\InlineResponse20041 leadsGroupsGet($status)
+> \Swagger\Client\Model\InlineResponse20050 leadsGroupsGet($status)
 
 Get a list of available groups
 
@@ -1110,7 +824,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\Swagger\Client\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
 
 ### Authorization
 
@@ -1124,7 +838,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityCampaignGet**
-> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdActivityCampaignGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20041 leadsLeadIdActivityCampaignGet($lead_id, $page, $per_page)
 
 Get a list of all lead campaign activity
 
@@ -1168,7 +882,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
 
 ### Authorization
 
@@ -1182,7 +896,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDeletionGet**
-> \Swagger\Client\Model\InlineResponse20033 leadsLeadIdActivityDeletionGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20042 leadsLeadIdActivityDeletionGet($lead_id, $page, $per_page)
 
 Get a list of all lead deletion activity
 
@@ -1226,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
+[**\Swagger\Client\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
 
 ### Authorization
 
@@ -1240,7 +954,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityDuplicatesGet**
-> \Swagger\Client\Model\InlineResponse20034 leadsLeadIdActivityDuplicatesGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20043 leadsLeadIdActivityDuplicatesGet($lead_id, $page, $per_page)
 
 Get a list of all lead duplicate activity
 
@@ -1284,7 +998,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\Swagger\Client\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
 
 ### Authorization
 
@@ -1298,7 +1012,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityLinksGet**
-> \Swagger\Client\Model\InlineResponse20035 leadsLeadIdActivityLinksGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20044 leadsLeadIdActivityLinksGet($lead_id, $page, $per_page)
 
 Get a list of all lead links activity
 
@@ -1342,7 +1056,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\Swagger\Client\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
 
 ### Authorization
 
@@ -1356,7 +1070,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivitySourceGet**
-> \Swagger\Client\Model\InlineResponse20036 leadsLeadIdActivitySourceGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20045 leadsLeadIdActivitySourceGet($lead_id, $page, $per_page)
 
 Get a list of all lead source activity
 
@@ -1400,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\Swagger\Client\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
 
 ### Authorization
 
@@ -1414,7 +1128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdActivityStatusGet**
-> \Swagger\Client\Model\InlineResponse20037 leadsLeadIdActivityStatusGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20046 leadsLeadIdActivityStatusGet($lead_id, $page, $per_page)
 
 Get a list of all lead status activity
 
@@ -1458,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
+[**\Swagger\Client\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
 
 ### Authorization
 
@@ -1472,7 +1186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdApplicationsApplicationIdPopulatePost**
-> \Swagger\Client\Model\InlineResponse20018 leadsLeadIdApplicationsApplicationIdPopulatePost($lead_id, $application_id)
+> \Swagger\Client\Model\InlineResponse20026 leadsLeadIdApplicationsApplicationIdPopulatePost($lead_id, $application_id)
 
 Populate PDF Document
 
@@ -1514,7 +1228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Swagger\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
 
 ### Authorization
 
@@ -1528,7 +1242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdAppointmentsGet**
-> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdAppointmentsGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdAppointmentsGet($lead_id, $page, $set_for, $set_by, $modified_by, $confirmed_by, $rescheduled_by, $seen_by, $rescheduled_count, $done, $per_page, $sort_by, $sort_dir, $date_filter, $start_date, $end_date)
 
 Get lead appointments
 
@@ -1551,10 +1265,23 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 );
 $lead_id = 56; // int | Lead Id
 $page = 56; // int | Page number
+$set_for = 56; // int | Filter by the user for who appointment was created
+$set_by = 56; // int | Filter by the user for who have created an appointment
+$modified_by = 56; // int | Filter by the user for who have modified an appointment
+$confirmed_by = 56; // int | Filter by the user for who have confirmed an appointment
+$rescheduled_by = 56; // int | Filter by the user for who have rescheduled an appointment
+$seen_by = 56; // int | Filter by the user for who have mark an appointment as seen
+$rescheduled_count = 56; // int | Filter by the count of rescheduling
+$done = true; // bool | Filter by the done flag
 $per_page = 56; // int | Count of records per page
+$sort_by = "sort_by_example"; // string | Sort appointments by columns
+$sort_dir = "sort_dir_example"; // string | Sort direction
+$date_filter = "date_filter_example"; // string | Filtering appointments by a date range depends on this filter
+$start_date = new \DateTime("2013-10-20"); // \DateTime | Filter appointments by a date in format Y-m-d
+$end_date = new \DateTime("2013-10-20"); // \DateTime | Filter leads by a date in format Y-m-d
 
 try {
-    $result = $apiInstance->leadsLeadIdAppointmentsGet($lead_id, $page, $per_page);
+    $result = $apiInstance->leadsLeadIdAppointmentsGet($lead_id, $page, $set_for, $set_by, $modified_by, $confirmed_by, $rescheduled_by, $seen_by, $rescheduled_count, $done, $per_page, $sort_by, $sort_dir, $date_filter, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadsApi->leadsLeadIdAppointmentsGet: ', $e->getMessage(), PHP_EOL;
@@ -1568,11 +1295,24 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
  **page** | **int**| Page number | [optional]
+ **set_for** | **int**| Filter by the user for who appointment was created | [optional]
+ **set_by** | **int**| Filter by the user for who have created an appointment | [optional]
+ **modified_by** | **int**| Filter by the user for who have modified an appointment | [optional]
+ **confirmed_by** | **int**| Filter by the user for who have confirmed an appointment | [optional]
+ **rescheduled_by** | **int**| Filter by the user for who have rescheduled an appointment | [optional]
+ **seen_by** | **int**| Filter by the user for who have mark an appointment as seen | [optional]
+ **rescheduled_count** | **int**| Filter by the count of rescheduling | [optional]
+ **done** | **bool**| Filter by the done flag | [optional]
  **per_page** | **int**| Count of records per page | [optional]
+ **sort_by** | **string**| Sort appointments by columns | [optional]
+ **sort_dir** | **string**| Sort direction | [optional]
+ **date_filter** | **string**| Filtering appointments by a date range depends on this filter | [optional]
+ **start_date** | **\DateTime**| Filter appointments by a date in format Y-m-d | [optional]
+ **end_date** | **\DateTime**| Filter leads by a date in format Y-m-d | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -1586,7 +1326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdAppointmentsPost**
-> \Swagger\Client\Model\InlineResponse20017 leadsLeadIdAppointmentsPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20025 leadsLeadIdAppointmentsPost($body, $lead_id)
 
 Create a lead appointment
 
@@ -1607,7 +1347,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | Create a lead appointment
+$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | Create a lead appointment
 $lead_id = 56; // int | Lead Id
 
 try {
@@ -1623,12 +1363,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body4**](../Model/Body4.md)| Create a lead appointment |
+ **body** | [**\Swagger\Client\Model\Body6**](../Model/Body6.md)| Create a lead appointment |
  **lead_id** | **int**| Lead Id |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
 
 ### Authorization
 
@@ -1698,7 +1438,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdDocumentsGet**
-> \Swagger\Client\Model\InlineResponse20024 leadsLeadIdDocumentsGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20032 leadsLeadIdDocumentsGet($lead_id, $page, $per_page)
 
 Get a list of available documents
 
@@ -1742,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
+[**\Swagger\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -1800,7 +1540,7 @@ Name | Type | Description  | Notes
  **label** | **int**| Label Id |
  **filename** | **string**| File name |
  **lead_id** | **int**| Lead Id |
- **body** | [**Object**](../Model/Object.md)|  | [optional]
+ **body** | **Object**|  | [optional]
 
 ### Return type
 
@@ -1818,7 +1558,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdEmailsTemplateIdPost**
-> \Swagger\Client\Model\InlineResponse20028 leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body)
+> \Swagger\Client\Model\InlineResponse20037 leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body)
 
 Send an email to lead with template
 
@@ -1841,7 +1581,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 );
 $lead_id = 56; // int | Lead Id
 $template_id = 56; // int | Template Id
-$body = new \Swagger\Client\Model\null(); //  | 
+$body = new \Swagger\Client\Model\Body11(); // \Swagger\Client\Model\Body11 | 
 
 try {
     $result = $apiInstance->leadsLeadIdEmailsTemplateIdPost($lead_id, $template_id, $body);
@@ -1858,11 +1598,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
  **template_id** | **int**| Template Id |
- **body** | [****](../Model/.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body11**](../Model/Body11.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
 
 ### Authorization
 
@@ -1876,7 +1616,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdGet**
-> \Swagger\Client\Model\InlineResponse2009 leadsLeadIdGet($lead_id)
+> \Swagger\Client\Model\InlineResponse20016 leadsLeadIdGet($lead_id)
 
 Get detailed lead information
 
@@ -1916,7 +1656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -1988,7 +1728,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdNotesGet**
-> \Swagger\Client\Model\InlineResponse20014 leadsLeadIdNotesGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20022 leadsLeadIdNotesGet($lead_id, $page, $per_page)
 
 Get lead notes
 
@@ -2032,7 +1772,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
 
 ### Authorization
 
@@ -2046,7 +1786,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdNotesPost**
-> \Swagger\Client\Model\InlineResponse20015 leadsLeadIdNotesPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20023 leadsLeadIdNotesPost($body, $lead_id)
 
 Create a lead note
 
@@ -2067,7 +1807,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | Create a lead note
+$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | Create a lead note
 $lead_id = 56; // int | Lead Id
 
 try {
@@ -2083,12 +1823,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body3**](../Model/Body3.md)| Create a lead note |
+ **body** | [**\Swagger\Client\Model\Body5**](../Model/Body5.md)| Create a lead note |
  **lead_id** | **int**| Lead Id |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
 
 ### Authorization
 
@@ -2102,7 +1842,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdPatch**
-> \Swagger\Client\Model\InlineResponse20010 leadsLeadIdPatch($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20017 leadsLeadIdPatch($body, $lead_id)
 
 Update a lead
 
@@ -2144,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
 
 ### Authorization
 
@@ -2153,188 +1893,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsLeadIdSignaturesApplicationIdGeneratePost**
-> \Swagger\Client\Model\InlineResponse20025 leadsLeadIdSignaturesApplicationIdGeneratePost($lead_id, $application_id)
-
-Generate an e-signature document
-
-Generate an new e-signature document.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$lead_id = 56; // int | Lead Id
-$application_id = 56; // int | Application Id
-
-try {
-    $result = $apiInstance->leadsLeadIdSignaturesApplicationIdGeneratePost($lead_id, $application_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsLeadIdSignaturesApplicationIdGeneratePost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lead_id** | **int**| Lead Id |
- **application_id** | **int**| Application Id |
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsLeadIdSignaturesApplicationIdSendPost**
-> \Swagger\Client\Model\InlineResponse20027 leadsLeadIdSignaturesApplicationIdSendPost($lead_id, $application_id, $body)
-
-Send an e-signature document
-
-Send an e-signature document using an email template for signature.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$lead_id = 56; // int | Lead Id
-$application_id = 56; // int | Application Id
-$body = new \Swagger\Client\Model\null(); //  | 
-
-try {
-    $result = $apiInstance->leadsLeadIdSignaturesApplicationIdSendPost($lead_id, $application_id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsLeadIdSignaturesApplicationIdSendPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lead_id** | **int**| Lead Id |
- **application_id** | **int**| Application Id |
- **body** | [****](../Model/.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **leadsLeadIdSignaturesGet**
-> \Swagger\Client\Model\InlineResponse20026 leadsLeadIdSignaturesGet($lead_id, $page, $per_page)
-
-Get a list of all lead e-signatures documents
-
-Get a list of all lead e-signatures documents
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: Token
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\LeadsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$lead_id = 56; // int | Lead Id
-$page = 56; // int | Page number
-$per_page = 56; // int | Count of records per page
-
-try {
-    $result = $apiInstance->leadsLeadIdSignaturesGet($lead_id, $page, $per_page);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsLeadIdSignaturesGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lead_id** | **int**| Lead Id |
- **page** | **int**| Page number | [optional]
- **per_page** | **int**| Count of records per page | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
-
-### Authorization
-
-[Token](../../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdSmsTemplateIdPost**
-> \Swagger\Client\Model\InlineResponse20030 leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body)
+> \Swagger\Client\Model\InlineResponse20039 leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body)
 
-Send an sms to lead with selected sms template
+Send an SMS to lead with selected SMS template
 
-Send an sms to lead with selected sms template.
+Send an SMS to lead with selected SMS template.
 
 ### Example
 ```php
@@ -2353,7 +1921,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
 );
 $lead_id = 56; // int | Lead Id
 $template_id = 56; // int | Template Id
-$body = new \Swagger\Client\Model\null(); //  | 
+$body = new \Swagger\Client\Model\Body12(); // \Swagger\Client\Model\Body12 | 
 
 try {
     $result = $apiInstance->leadsLeadIdSmsTemplateIdPost($lead_id, $template_id, $body);
@@ -2370,11 +1938,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lead_id** | **int**| Lead Id |
  **template_id** | **int**| Template Id |
- **body** | [****](../Model/.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body12**](../Model/Body12.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
 
 ### Authorization
 
@@ -2388,7 +1956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdTasksGet**
-> \Swagger\Client\Model\InlineResponse20019 leadsLeadIdTasksGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20027 leadsLeadIdTasksGet($lead_id, $page, $per_page)
 
 Get lead tasks
 
@@ -2432,7 +2000,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
 
 ### Authorization
 
@@ -2446,7 +2014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdTasksPost**
-> \Swagger\Client\Model\InlineResponse20020 leadsLeadIdTasksPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20028 leadsLeadIdTasksPost($body, $lead_id)
 
 Create a lead task
 
@@ -2467,7 +2035,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | Create a lead task
+$body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | Create a lead task
 $lead_id = 56; // int | Lead Id
 
 try {
@@ -2483,12 +2051,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body5**](../Model/Body5.md)| Create a lead task |
+ **body** | [**\Swagger\Client\Model\Body7**](../Model/Body7.md)| Create a lead task |
  **lead_id** | **int**| Lead Id |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
 
 ### Authorization
 
@@ -2502,7 +2070,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersGet**
-> \Swagger\Client\Model\InlineResponse20021 leadsLeadIdUsersGet($lead_id, $page, $per_page)
+> \Swagger\Client\Model\InlineResponse20029 leadsLeadIdUsersGet($lead_id, $page, $per_page)
 
 Get a list of assigned users
 
@@ -2546,7 +2114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
 
 ### Authorization
 
@@ -2560,7 +2128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersPost**
-> \Swagger\Client\Model\InlineResponse20022 leadsLeadIdUsersPost($body, $lead_id)
+> \Swagger\Client\Model\InlineResponse20030 leadsLeadIdUsersPost($body, $lead_id)
 
 Assign a user
 
@@ -2581,7 +2149,7 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | Create a lead task
+$body = new \Swagger\Client\Model\Body8(); // \Swagger\Client\Model\Body8 | Create a lead task
 $lead_id = 56; // int | Lead Id
 
 try {
@@ -2597,12 +2165,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body6**](../Model/Body6.md)| Create a lead task |
+ **body** | [**\Swagger\Client\Model\Body8**](../Model/Body8.md)| Create a lead task |
  **lead_id** | **int**| Lead Id |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
 
 ### Authorization
 
@@ -2616,7 +2184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsLeadIdUsersUserIdDelete**
-> \Swagger\Client\Model\InlineResponse20023 leadsLeadIdUsersUserIdDelete($lead_id, $user_id)
+> \Swagger\Client\Model\InlineResponse20031 leadsLeadIdUsersUserIdDelete($lead_id, $user_id)
 
 Unassign a user from a lead
 
@@ -2658,7 +2226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -2672,7 +2240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsPost**
-> \Swagger\Client\Model\InlineResponse2008 leadsPost($body)
+> \Swagger\Client\Model\InlineResponse20015 leadsPost($body)
 
 Create a lead
 
@@ -2712,7 +2280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -2725,12 +2293,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **leadsSignaturesApplicationIdDownloadGet**
-> string leadsSignaturesApplicationIdDownloadGet($application_id)
+# **leadsPricingTemplatesGet**
+> \Swagger\Client\Model\InlineResponse20021 leadsPricingTemplatesGet($page, $per_page)
 
-Download an e-signature document
+Get pricing templates
 
-Download an e-signature document.
+Get pricing templates
 
 ### Example
 ```php
@@ -2747,13 +2315,14 @@ $apiInstance = new Swagger\Client\Api\LeadsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$application_id = 56; // int | Application Id
+$page = 56; // int | Page number
+$per_page = 56; // int | Count of records per page
 
 try {
-    $result = $apiInstance->leadsSignaturesApplicationIdDownloadGet($application_id);
+    $result = $apiInstance->leadsPricingTemplatesGet($page, $per_page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LeadsApi->leadsSignaturesApplicationIdDownloadGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LeadsApi->leadsPricingTemplatesGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2762,11 +2331,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_id** | **int**| Application Id |
+ **page** | **int**| Page number | [optional]
+ **per_page** | **int**| Count of records per page | [optional]
 
 ### Return type
 
-**string**
+[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
 
 ### Authorization
 
@@ -2775,16 +2345,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsSmsTemplatesGet**
-> \Swagger\Client\Model\InlineResponse20031 leadsSmsTemplatesGet()
+> \Swagger\Client\Model\InlineResponse20040 leadsSmsTemplatesGet()
 
-Get list of sms templates
+Get list of SMS templates
 
-Get list of available sms templates for sending sms to a lead
+Get list of available SMS templates for sending SMS to a lead
 
 ### Example
 ```php
@@ -2816,7 +2386,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
 
 ### Authorization
 
@@ -2830,7 +2400,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsSourcesGet**
-> \Swagger\Client\Model\InlineResponse20042 leadsSourcesGet()
+> \Swagger\Client\Model\InlineResponse20051 leadsSourcesGet()
 
 Get a list of available sources
 
@@ -2866,7 +2436,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
+[**\Swagger\Client\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
 
 ### Authorization
 
@@ -2880,7 +2450,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsStatusesGet**
-> \Swagger\Client\Model\InlineResponse20043 leadsStatusesGet($group)
+> \Swagger\Client\Model\InlineResponse20052 leadsStatusesGet($group)
 
 Get a list of available statuses
 
@@ -2920,7 +2490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
+[**\Swagger\Client\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
 
 ### Authorization
 
@@ -2934,7 +2504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **leadsUsersGet**
-> \Swagger\Client\Model\InlineResponse20021 leadsUsersGet($page, $per_page)
+> \Swagger\Client\Model\InlineResponse20029 leadsUsersGet($page, $per_page)
 
 Get a list of available users
 
@@ -2976,7 +2546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
 
 ### Authorization
 

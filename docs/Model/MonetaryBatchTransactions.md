@@ -3,11 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** | Transaction ID | [optional] 
 **date** | [**\DateTime**](\DateTime.md) | Transaction date | [optional] 
 **type** | **string** | Transaction type | [optional] 
 **amount** | **string** | Transaction amount | [optional] 
 **cardholder** | **string** | Cardholder number | [optional] 
 **auth_code** | **string** | Transaction auth code | [optional] 
+**pos_entry_mode** | **string** | POS entry mode | [optional] 
+**invoice_number** | **string** | Invoice number | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

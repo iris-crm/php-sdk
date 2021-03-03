@@ -1,30 +1,42 @@
 # Swagger\Client\SubscriptionsApi
 
-All URIs are relative to *https://iriscrm.com/api/v1*
+All URIs are relative to */api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**subscriptionsGet**](SubscriptionsApi.md#subscriptionsget) | **GET** /subscriptions | Return a list of subscriptions
 [**subscriptionsPost**](SubscriptionsApi.md#subscriptionspost) | **POST** /subscriptions | Create a subscription
-[**subscriptionsSampleApiUpdatedGet**](SubscriptionsApi.md#subscriptionssampleapiupdatedget) | **GET** /subscriptions/sample/api.updated | Receive a notification when this API is updated.
-[**subscriptionsSampleLeadCreatedGet**](SubscriptionsApi.md#subscriptionssampleleadcreatedget) | **GET** /subscriptions/sample/lead.created | Receive a notification when a lead is created in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
-[**subscriptionsSampleLeadDeletedGet**](SubscriptionsApi.md#subscriptionssampleleaddeletedget) | **GET** /subscriptions/sample/lead.deleted | Receive a notification when a lead in this CRM is deleted.
-[**subscriptionsSampleLeadDocumentUploadedGet**](SubscriptionsApi.md#subscriptionssampleleaddocumentuploadedget) | **GET** /subscriptions/sample/lead.document.uploaded | Receive a notification when a lead document is uploaded.
-[**subscriptionsSampleLeadEmailReceivedGet**](SubscriptionsApi.md#subscriptionssampleleademailreceivedget) | **GET** /subscriptions/sample/lead.email.received | Receive a notification when an email message is received on a lead in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
-[**subscriptionsSampleLeadNoteAddedGet**](SubscriptionsApi.md#subscriptionssampleleadnoteaddedget) | **GET** /subscriptions/sample/lead.note.added | Receive a notification when a lead in this CRM has a note posted, with the option to only receive a notification when a lead is in the status(es) specified here.
-[**subscriptionsSampleLeadRestoredGet**](SubscriptionsApi.md#subscriptionssampleleadrestoredget) | **GET** /subscriptions/sample/lead.restored | Receive a notification when a deleted lead is restored in this CRM.
-[**subscriptionsSampleLeadStatusUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadstatusupdatedget) | **GET** /subscriptions/sample/lead.status.updated | Receive a notification when a lead&#x27;s status is updated in this CRM, with the option to only receive a notification when a lead is moved to or from the status(es) specified here.
-[**subscriptionsSampleLeadUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadupdatedget) | **GET** /subscriptions/sample/lead.updated | Receive a notification when a lead&#x27;s campaign, status, group, or field values are updated in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
-[**subscriptionsSampleTurboappApprovedGet**](SubscriptionsApi.md#subscriptionssampleturboappapprovedget) | **GET** /subscriptions/sample/turboapp.approved | Recieve a notification when a TurboApp is approved by a processor.
-[**subscriptionsSampleTurboappRejectedGet**](SubscriptionsApi.md#subscriptionssampleturboapprejectedget) | **GET** /subscriptions/sample/turboapp.rejected | Recieve a notification when a TurboApp is declined by a processor.
-[**subscriptionsSampleTurboappSubmittedGet**](SubscriptionsApi.md#subscriptionssampleturboappsubmittedget) | **GET** /subscriptions/sample/turboapp.submitted | Receive a notification when a TurboApp is submitted to a processor.
-[**subscriptionsSampleTurboappUpdatedGet**](SubscriptionsApi.md#subscriptionssampleturboappupdatedget) | **GET** /subscriptions/sample/turboapp.updated | Recieve a notification when a TurboApp receives an update from a processor.
+[**subscriptionsSampleApiUpdatedGet**](SubscriptionsApi.md#subscriptionssampleapiupdatedget) | **GET** /subscriptions/sample/api.updated | Receive a notification when this API is updated
+[**subscriptionsSampleLeadCreatedGet**](SubscriptionsApi.md#subscriptionssampleleadcreatedget) | **GET** /subscriptions/sample/lead.created | Receive a notification when a lead is created in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
+[**subscriptionsSampleLeadDeletedGet**](SubscriptionsApi.md#subscriptionssampleleaddeletedget) | **GET** /subscriptions/sample/lead.deleted | Receive a notification when a lead in this CRM is deleted
+[**subscriptionsSampleLeadDocumentUploadedGet**](SubscriptionsApi.md#subscriptionssampleleaddocumentuploadedget) | **GET** /subscriptions/sample/lead.document.uploaded | Receive a notification when a lead document is uploaded
+[**subscriptionsSampleLeadEmailReceivedGet**](SubscriptionsApi.md#subscriptionssampleleademailreceivedget) | **GET** /subscriptions/sample/lead.email.received | Receive a notification when an email message is received on a lead in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
+[**subscriptionsSampleLeadNoteAddedGet**](SubscriptionsApi.md#subscriptionssampleleadnoteaddedget) | **GET** /subscriptions/sample/lead.note.added | Receive a notification when a lead in this CRM has a note posted, with the option to only receive a notification when a lead is in the status(es) specified here
+[**subscriptionsSampleLeadRestoredGet**](SubscriptionsApi.md#subscriptionssampleleadrestoredget) | **GET** /subscriptions/sample/lead.restored | Receive a notification when a deleted lead is restored in this CRM
+[**subscriptionsSampleLeadSignatureGeneratedGet**](SubscriptionsApi.md#subscriptionssampleleadsignaturegeneratedget) | **GET** /subscriptions/sample/lead.signature.generated | Receive a notification when a lead&#x27;s e-signature document is generated
+[**subscriptionsSampleLeadSignatureOpenedGet**](SubscriptionsApi.md#subscriptionssampleleadsignatureopenedget) | **GET** /subscriptions/sample/lead.signature.opened | Receive a notification when a lead&#x27;s e-signature document is opened by the recipient
+[**subscriptionsSampleLeadSignatureSignedGet**](SubscriptionsApi.md#subscriptionssampleleadsignaturesignedget) | **GET** /subscriptions/sample/lead.signature.signed | Receive a notification when a lead&#x27;s e-signature document is signed by the recipient
+[**subscriptionsSampleLeadStatusUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadstatusupdatedget) | **GET** /subscriptions/sample/lead.status.updated | Receive a notification when a lead&#x27;s status is updated in this CRM, with the option to only receive a notification when a lead is moved to or from the status(es) specified here
+[**subscriptionsSampleLeadUpdatedGet**](SubscriptionsApi.md#subscriptionssampleleadupdatedget) | **GET** /subscriptions/sample/lead.updated | Receive a notification when a lead&#x27;s campaign, status, group, or field values are updated in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
+[**subscriptionsSampleResidualsLineitemAddedGet**](SubscriptionsApi.md#subscriptionssampleresidualslineitemaddedget) | **GET** /subscriptions/sample/residuals.lineitem.added | Receive a notification when a residuals line item is added
+[**subscriptionsSampleResidualsReportPublishedGet**](SubscriptionsApi.md#subscriptionssampleresidualsreportpublishedget) | **GET** /subscriptions/sample/residuals.report.published | Receive a notification when a residuals report is published
+[**subscriptionsSampleSubscriptionTestGet**](SubscriptionsApi.md#subscriptionssamplesubscriptiontestget) | **GET** /subscriptions/sample/subscription.test | Test payload for checking server response
+[**subscriptionsSampleTicketChecklistUpdatedGet**](SubscriptionsApi.md#subscriptionssampleticketchecklistupdatedget) | **GET** /subscriptions/sample/ticket.checklist.updated | Receive a notification when a ticket&#x27;s checklist is updated
+[**subscriptionsSampleTicketCommentEditedGet**](SubscriptionsApi.md#subscriptionssampleticketcommenteditedget) | **GET** /subscriptions/sample/ticket.comment.edited | Receive a notification when a ticket comment is edited
+[**subscriptionsSampleTicketCommentedGet**](SubscriptionsApi.md#subscriptionssampleticketcommentedget) | **GET** /subscriptions/sample/ticket.commented | Receive a notification when a ticket comment is added
+[**subscriptionsSampleTicketCreatedGet**](SubscriptionsApi.md#subscriptionssampleticketcreatedget) | **GET** /subscriptions/sample/ticket.created | Receive a notification when a ticket is created
+[**subscriptionsSampleTicketResolvedGet**](SubscriptionsApi.md#subscriptionssampleticketresolvedget) | **GET** /subscriptions/sample/ticket.resolved | Receive a notification when a ticket is resolved
+[**subscriptionsSampleTicketUpdatedGet**](SubscriptionsApi.md#subscriptionssampleticketupdatedget) | **GET** /subscriptions/sample/ticket.updated | Receive a notification when a ticket is updated
+[**subscriptionsSampleTurboappApprovedGet**](SubscriptionsApi.md#subscriptionssampleturboappapprovedget) | **GET** /subscriptions/sample/turboapp.approved | Receive a notification when a merchant is approved
+[**subscriptionsSampleTurboappDeclinedGet**](SubscriptionsApi.md#subscriptionssampleturboappdeclinedget) | **GET** /subscriptions/sample/turboapp.declined | Receive a notification when a merchant is declined
+[**subscriptionsSampleTurboappSubmittedGet**](SubscriptionsApi.md#subscriptionssampleturboappsubmittedget) | **GET** /subscriptions/sample/turboapp.submitted | Receive a notification when a TurboApp is submitted to a processor
+[**subscriptionsSampleTurboappUpdatedGet**](SubscriptionsApi.md#subscriptionssampleturboappupdatedget) | **GET** /subscriptions/sample/turboapp.updated | Receive a notification when the underwriting status is updated
 [**subscriptionsSubscriptionIdDelete**](SubscriptionsApi.md#subscriptionssubscriptioniddelete) | **DELETE** /subscriptions/{subscriptionId} | Delete a subscription
 [**subscriptionsSubscriptionIdGet**](SubscriptionsApi.md#subscriptionssubscriptionidget) | **GET** /subscriptions/{subscriptionId} | Return a subscription by its id
 [**subscriptionsSubscriptionIdPatch**](SubscriptionsApi.md#subscriptionssubscriptionidpatch) | **PATCH** /subscriptions/{subscriptionId} | Update a subscription
 
 # **subscriptionsGet**
-> \Swagger\Client\Model\InlineResponse20044 subscriptionsGet($page, $per_page)
+> \Swagger\Client\Model\InlineResponse20053 subscriptionsGet($page, $per_page)
 
 Return a list of subscriptions
 
@@ -66,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
+[**\Swagger\Client\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
 
 ### Authorization
 
@@ -136,7 +148,7 @@ Name | Type | Description  | Notes
 # **subscriptionsSampleApiUpdatedGet**
 > \Swagger\Client\Model\ApiUpdated subscriptionsSampleApiUpdatedGet()
 
-Receive a notification when this API is updated.
+Receive a notification when this API is updated
 
 Example use: stay aware of changes and additions to the API.
 
@@ -186,7 +198,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadCreatedGet**
 > \Swagger\Client\Model\LeadCreatedEventInfo subscriptionsSampleLeadCreatedGet()
 
-Receive a notification when a lead is created in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
+Receive a notification when a lead is created in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
 
 Example use: create a record in an external system when a lead is created in this CRM.
 
@@ -236,7 +248,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadDeletedGet**
 > \Swagger\Client\Model\LeadDeletedEventInfo subscriptionsSampleLeadDeletedGet()
 
-Receive a notification when a lead in this CRM is deleted.
+Receive a notification when a lead in this CRM is deleted
 
 Example use: update the status, post a note, or delete a record in an external system when a lead is deleted in this CRM.
 
@@ -286,7 +298,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadDocumentUploadedGet**
 > \Swagger\Client\Model\LeadDocumentUploadedEventInfo subscriptionsSampleLeadDocumentUploadedGet()
 
-Receive a notification when a lead document is uploaded.
+Receive a notification when a lead document is uploaded
 
 Example use: update the record in an external system after the lead's uploaded document in this CRM.
 
@@ -336,9 +348,9 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadEmailReceivedGet**
 > \Swagger\Client\Model\LeadEmailReceivedEventInfo subscriptionsSampleLeadEmailReceivedGet()
 
-Receive a notification when an email message is received on a lead in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
+Receive a notification when an email message is received on a lead in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
 
-Example use: update the status of a lead when an email is recieved if it's in a certain status.
+Example use: update the status of a lead when an email is received if it's in a certain status.
 
 ### Example
 ```php
@@ -386,7 +398,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadNoteAddedGet**
 > \Swagger\Client\Model\LeadNoteAddedEventInfo subscriptionsSampleLeadNoteAddedGet()
 
-Receive a notification when a lead in this CRM has a note posted, with the option to only receive a notification when a lead is in the status(es) specified here.
+Receive a notification when a lead in this CRM has a note posted, with the option to only receive a notification when a lead is in the status(es) specified here
 
 Example use: add a note to a record in an external system when a note is posted on a lead in this CRM.
 
@@ -436,7 +448,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadRestoredGet**
 > \Swagger\Client\Model\LeadRestoredEventInfo subscriptionsSampleLeadRestoredGet()
 
-Receive a notification when a deleted lead is restored in this CRM.
+Receive a notification when a deleted lead is restored in this CRM
 
 Example use: update the status, post a note, or restore a record in an external system when a deleted lead is restored in this CRM.
 
@@ -483,10 +495,160 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **subscriptionsSampleLeadSignatureGeneratedGet**
+> \Swagger\Client\Model\SignatureGenerated subscriptionsSampleLeadSignatureGeneratedGet()
+
+Receive a notification when a lead's e-signature document is generated
+
+Example use: update an external system when a user generates an electronic signature document.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleLeadSignatureGeneratedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleLeadSignatureGeneratedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\SignatureGenerated**](../Model/SignatureGenerated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleLeadSignatureOpenedGet**
+> \Swagger\Client\Model\SignatureOpened subscriptionsSampleLeadSignatureOpenedGet()
+
+Receive a notification when a lead's e-signature document is opened by the recipient
+
+Example use: update an external system when a recepient clicks a link to open an electronic signature document.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleLeadSignatureOpenedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleLeadSignatureOpenedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\SignatureOpened**](../Model/SignatureOpened.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleLeadSignatureSignedGet**
+> \Swagger\Client\Model\SignatureSigned subscriptionsSampleLeadSignatureSignedGet()
+
+Receive a notification when a lead's e-signature document is signed by the recipient
+
+Example use: update an external system when one or all recepients signed an electronic signature document.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleLeadSignatureSignedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleLeadSignatureSignedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\SignatureSigned**](../Model/SignatureSigned.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **subscriptionsSampleLeadStatusUpdatedGet**
 > \Swagger\Client\Model\LeadStatusUpdatedEventInfo subscriptionsSampleLeadStatusUpdatedGet()
 
-Receive a notification when a lead's status is updated in this CRM, with the option to only receive a notification when a lead is moved to or from the status(es) specified here.
+Receive a notification when a lead's status is updated in this CRM, with the option to only receive a notification when a lead is moved to or from the status(es) specified here
 
 Example use: update the status of a record in an external system after the lead's status is updated in this CRM.
 
@@ -536,7 +698,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleLeadUpdatedGet**
 > \Swagger\Client\Model\LeadUpdatedEventInfo subscriptionsSampleLeadUpdatedGet()
 
-Receive a notification when a lead's campaign, status, group, or field values are updated in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here.
+Receive a notification when a lead's campaign, status, group, or field values are updated in this CRM, with the option to only receive a notification when a lead is in the status(es) specified here
 
 Example use: update field information for a record in an external system when the corresponding information is updated in this CRM.
 
@@ -583,12 +745,462 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **subscriptionsSampleResidualsLineitemAddedGet**
+> \Swagger\Client\Model\LineItemAdded subscriptionsSampleResidualsLineitemAddedGet()
+
+Receive a notification when a residuals line item is added
+
+Example use: Trigger a workflow as soon as a line item is added
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleResidualsLineitemAddedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleResidualsLineitemAddedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\LineItemAdded**](../Model/LineItemAdded.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleResidualsReportPublishedGet**
+> \Swagger\Client\Model\ReportPublished subscriptionsSampleResidualsReportPublishedGet()
+
+Receive a notification when a residuals report is published
+
+Example use: update the status of a record in your system when a residuals report is published
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleResidualsReportPublishedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleResidualsReportPublishedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ReportPublished**](../Model/ReportPublished.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleSubscriptionTestGet**
+> \Swagger\Client\Model\TestSubscription subscriptionsSampleSubscriptionTestGet()
+
+Test payload for checking server response
+
+Example use: stay aware of changes and additions to the API.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleSubscriptionTestGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleSubscriptionTestGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\TestSubscription**](../Model/TestSubscription.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketChecklistUpdatedGet**
+> \Swagger\Client\Model\ChecklistUpdated subscriptionsSampleTicketChecklistUpdatedGet()
+
+Receive a notification when a ticket's checklist is updated
+
+Example use: receive an alert when a checklist item is updated on a ticket.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketChecklistUpdatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketChecklistUpdatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ChecklistUpdated**](../Model/ChecklistUpdated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketCommentEditedGet**
+> \Swagger\Client\Model\SubscriptionCommentEdited subscriptionsSampleTicketCommentEditedGet()
+
+Receive a notification when a ticket comment is edited
+
+Example use: receive an alert when a user edited a comment in a ticket.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketCommentEditedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketCommentEditedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\SubscriptionCommentEdited**](../Model/SubscriptionCommentEdited.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketCommentedGet**
+> \Swagger\Client\Model\TicketCommented subscriptionsSampleTicketCommentedGet()
+
+Receive a notification when a ticket comment is added
+
+Example use: receive an alert when a user adds a comment to a ticket.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketCommentedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketCommentedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\TicketCommented**](../Model/TicketCommented.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketCreatedGet**
+> \Swagger\Client\Model\TicketCreated subscriptionsSampleTicketCreatedGet()
+
+Receive a notification when a ticket is created
+
+Example use: receive an alert with ticket details every time a new ticket is created.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketCreatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketCreatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\TicketCreated**](../Model/TicketCreated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketResolvedGet**
+> \Swagger\Client\Model\TicketResolved subscriptionsSampleTicketResolvedGet()
+
+Receive a notification when a ticket is resolved
+
+Example use: receive an alert with ticket details every time a ticket is resolved.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketResolvedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketResolvedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\TicketResolved**](../Model/TicketResolved.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **subscriptionsSampleTicketUpdatedGet**
+> \Swagger\Client\Model\TicketUpdated subscriptionsSampleTicketUpdatedGet()
+
+Receive a notification when a ticket is updated
+
+Example use: receive an alert with ticket details every time a ticket is updated.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: Token
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->subscriptionsSampleTicketUpdatedGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTicketUpdatedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\TicketUpdated**](../Model/TicketUpdated.md)
+
+### Authorization
+
+[Token](../../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **subscriptionsSampleTurboappApprovedGet**
 > \Swagger\Client\Model\TurboAppApproved subscriptionsSampleTurboappApprovedGet()
 
-Recieve a notification when a TurboApp is approved by a processor.
+Receive a notification when a merchant is approved
 
-Example use: update the status of a record in an external system when a TurboApp is approved by a processor.
+Example use: update the status of a record in your system when TurboApp receives an approval status from the processor.
 
 ### Example
 ```php
@@ -633,12 +1245,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionsSampleTurboappRejectedGet**
-> \Swagger\Client\Model\TurboAppRejected subscriptionsSampleTurboappRejectedGet()
+# **subscriptionsSampleTurboappDeclinedGet**
+> \Swagger\Client\Model\TurboAppDeclined subscriptionsSampleTurboappDeclinedGet()
 
-Recieve a notification when a TurboApp is declined by a processor.
+Receive a notification when a merchant is declined
 
-Example use: update the status of a record in an external system when a TurboApp is decline by a processor.
+Example use: update the status of a record in your system when TurboApp receives a declined status by the processor.
 
 ### Example
 ```php
@@ -657,10 +1269,10 @@ $apiInstance = new Swagger\Client\Api\SubscriptionsApi(
 );
 
 try {
-    $result = $apiInstance->subscriptionsSampleTurboappRejectedGet();
+    $result = $apiInstance->subscriptionsSampleTurboappDeclinedGet();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTurboappRejectedGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionsApi->subscriptionsSampleTurboappDeclinedGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -670,7 +1282,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\TurboAppRejected**](../Model/TurboAppRejected.md)
+[**\Swagger\Client\Model\TurboAppDeclined**](../Model/TurboAppDeclined.md)
 
 ### Authorization
 
@@ -686,7 +1298,7 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleTurboappSubmittedGet**
 > \Swagger\Client\Model\TurboAppSubmited subscriptionsSampleTurboappSubmittedGet()
 
-Receive a notification when a TurboApp is submitted to a processor.
+Receive a notification when a TurboApp is submitted to a processor
 
 Example use: create a record in an external system when a TurboApp is submitted.
 
@@ -736,9 +1348,9 @@ This endpoint does not need any parameter.
 # **subscriptionsSampleTurboappUpdatedGet**
 > \Swagger\Client\Model\TurboAppUpdated subscriptionsSampleTurboappUpdatedGet()
 
-Recieve a notification when a TurboApp receives an update from a processor.
+Receive a notification when the underwriting status is updated
 
-Example use: update the status of a record in an external system when a TurboApp receives an update from a processor.
+Example use: update the status of a merchant record in your system when TurboApp receives an underwriting update from the processor.
 
 ### Example
 ```php
@@ -784,7 +1396,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionsSubscriptionIdDelete**
-> \Swagger\Client\Model\InlineResponse20045 subscriptionsSubscriptionIdDelete($subscription_id)
+> \Swagger\Client\Model\InlineResponse20054 subscriptionsSubscriptionIdDelete($subscription_id)
 
 Delete a subscription
 
@@ -824,7 +1436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
+[**\Swagger\Client\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\LeadFieldTab[]**](LeadFieldTab.md) |  | [optional] 
+**data** | [**\Swagger\Client\Model\ResidualTemplateAssigned[]**](ResidualTemplateAssigned.md) |  | [optional] 
 **links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
 **meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 

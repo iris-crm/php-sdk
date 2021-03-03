@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Swagger\Client\Model\CampaignActivity[]**](CampaignActivity.md) |  | [optional] 
+**data** | [**\Swagger\Client\Model\InlineResponse20032Data[]**](InlineResponse20032Data.md) | A list of lead documents | [optional] 
 **links** | [**\Swagger\Client\Model\Links**](Links.md) |  | [optional] 
 **meta** | [**\Swagger\Client\Model\Meta**](Meta.md) |  | [optional] 
 

@@ -4,8 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Account ID | [optional] 
+**application_url** | **string** | Application URL | [optional] 
+**identifier** | **string** | Application identifier | [optional] 
 **dba** | **string** | Merchant name | [optional] 
 **mid** | **int** | Merchant ID | [optional] 
+**lid** | **int** | Lead ID related to the application | [optional] 
 **comments** | [**\Swagger\Client\Model\TurboAppUpdatedDataComments**](TurboAppUpdatedDataComments.md) |  | [optional] 
 **activation_status** | [**\Swagger\Client\Model\TurboAppUpdatedDataActivationStatus**](TurboAppUpdatedDataActivationStatus.md) |  | [optional] 
 **application_status** | [**\Swagger\Client\Model\TurboAppUpdatedDataActivationStatus**](TurboAppUpdatedDataActivationStatus.md) |  | [optional] 
